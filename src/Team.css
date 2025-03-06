@@ -1,0 +1,91 @@
+.team{
+    margin-top: 1rem;
+    background-image: linear-gradient(90deg, #ffffff, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: calc(2em / 16);
+    background-clip: text;
+    color: #000;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: Krona One;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 118px;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+.president{
+    color:#695d5a;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(270deg, #ffffff40, #ffffff40);
+    background-clip: text;
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: calc(1em / 16);
+    -webkit-background-clip: text;
+    font-family: Jost;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    /* border: 2px solid black; */
+    width: fit-content;
+}
+
+
+
+
+@media (min-width: 801px) {
+    .text_txt__5GCRz {
+        align-items: center;
+    }
+
+    
+}
+.img_ps{
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .img_ps::after, .img_ps::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+    /* padding: 1px; */
+  }
+  .img_ps::before{
+    filter: blur(0.5rem);
+    opacity: 1;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }

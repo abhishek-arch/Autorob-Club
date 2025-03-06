@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #4158D0, #e560dc, #ffb374, #ef5f5f, #d840b6);
+    background-size: 400% 400%;
+    animation: bg 12s ease infinite;
+  }
+  
+  @keyframes bg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  /* For Webkit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+}
+
+/* Track (Background of scrollbar) */
+::-webkit-scrollbar-track {
+  background: #121212; /* Light background */
+  border-radius: 20px; /* Rounded edges */
+}
+
+/* Scrollbar Handle (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff7eb3, #ff758c); /* Gradient color */
+  border-radius: 20px; /* Rounded corners */
+}
+
+/* Scrollbar Handle on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff758c, #ff5e62);
+}
+
+
+
+
+  
