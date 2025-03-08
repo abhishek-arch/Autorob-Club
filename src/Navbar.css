@@ -2,7 +2,12 @@
     filter: invert(0);
 }
 .hamburger{
-    /* display: none; */
+    display: none;
+    
+    border: 2px solid rebeccapurple;
+    ;
+    z-index: 1;
+    /* position: fixed; */
 }
 @media screen and (max-width: 768px){
     .hamburger{

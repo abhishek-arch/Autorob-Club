@@ -89,3 +89,14 @@
       --angle: 360deg;
     }
   }
+  .fade {
+    animation: fadeEffect 1.5s ease-in-out;
+  }
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

@@ -7,7 +7,7 @@ const navbar = ({isopen , setisopen}) => {
 
   const mouseclick = () => {
     setisopen(!isopen)
-      c
+      
   } ;
       
    
@@ -22,7 +22,7 @@ const navbar = ({isopen , setisopen}) => {
           <li>Contact us</li>
           <li>Library</li>
         </ul>
-        <div className="hamburger border-2 mr-4" onClick={mouseclick}><img  className='invert' src={hamburger} alt=""    /></div>
+        <div  className="hamburger border-2 mr-4 " ><img  className='invert' src={hamburger} alt="" onClick={mouseclick}   /></div>
       </div>
     </div>
   )
