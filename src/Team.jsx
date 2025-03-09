@@ -14,14 +14,17 @@ const Team = () => {
     {
       src: {Pragya},
       text: "Pragya",
+      text2: "President",
     },
     {
       src: {Namo},
       text: "Namo",
+      text2: "Vice President",
     },
     {
       src: "Arnav",
       text: "Arnav",
+      text2: "Head",
   
     },
   ];
@@ -43,33 +46,33 @@ const Team = () => {
 
   return (
     <div>
-      <div className="team  border-2 bg-black">Our Team</div>
+      <div className="team">Our Team</div>
 
-      <div className="team_detail flex  justify-center flex-wrap  items-center gap-[116px]">
+      <div className="team_detail flex  justify-center flex-wrap  items-center gap-[120px]">
         <div className="president flex flex-col w-fit">
-          <h1 className="w-fit">President</h1>
+          <h1 className="w-[372px]">{images[index].text2}</h1>
 
           <div className="img_ps   ml-2">
             <img key={index} className="fade" src={images[index].src} alt="" />
           </div>
-          <h1 className="w-fit fade pl-[4.75rem]">{images[index].text}</h1>
+          <h1 className="w-fit fade pl-[6rem]">{images[index].text}</h1>
         
         </div>
         <div className="president flex flex-col w-fit">
           <h1 className="w-fit pl-12 Head"> Head</h1>
 
           <div className="img_ps   ml-2">
-            <img src={Arnav} alt="" />
+            <img src="#" alt="" />
           </div>
-          <h1 className="w-fit">President</h1>
+          <h1 className="w-fit ">President</h1>
         </div>
         <div className="president flex flex-col">
-          <h1 className="w-fit">President</h1>
+          <h1 className="w-fit ">President</h1>
 
           <div className="img_ps  ml-2 ">
             <img src="" alt="" />
           </div>
-          <h1 className="w-fit">President</h1>
+          <h1 className="w-fit ">President</h1>
         </div>
         <div className="president flex flex-col ">
           <h1 className="w-fit">President</h1>
@@ -77,7 +80,7 @@ const Team = () => {
           <div className="img_ps   ml-2">
             <img src="" alt="" />
           </div>
-          <h1 className="w-fit">President</h1>
+          <h1 className="w-fit ">President</h1>
         </div>
 
       </div>

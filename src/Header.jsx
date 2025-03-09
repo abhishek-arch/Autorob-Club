@@ -4,6 +4,18 @@ import './Header.css'
 import autorobvideo from './assets/autorob.mp4'
 
 
+const MouseEnter = () => {
+  document.querySelector('.cursor').style.transform = 'scale(2.5)';
+ 
+  document.querySelector('.cursor').style.zIndex = '1';
+  document.querySelector('.cursor').textContent = 'Glimpse';
+}
+const MouseLeave = () => {
+  document.querySelector('.cursor').style.transform = 'scale(1)';
+  document.querySelector('.cursor').textContent = '';
+  document.querySelector('.cursor').style.zIndex = '0';
+}
+
 
 
 const Header = () => {
@@ -14,7 +26,7 @@ const Header = () => {
         <h2 className='text-white'>Justifying 'T' in HBTU</h2>
         </div>
       <div className="right  mt-1 border-red-50 justify-center items-center ">
-       <div className='video flex justify-center items-center'> <video className=' object-cover p-[4px] h-[500px] w-[1200px] pt' src= {autorobvideo} autoPlay loop muted></video> </div>
+       <div className='video flex justify-center items-center'> <video className=' object-cover p-[4px] h-[500px] w-[1200px] pt' src= {autorobvideo} autoPlay loop muted onMouseEnter={MouseEnter} onMouseLeave={MouseLeave} ></video> </div>
       </div>
     </div>
   )

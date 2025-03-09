@@ -13,26 +13,16 @@
   top: 0px;
   left: 0px;
   transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.right:hover ~ .cursor {
-  transform: scale(3);
-  width: 80px;
-  height: 80px;
-  background-color: #f1f1f1;
-  opacity: 0.5;
-}
 
-.right:hover ~ .cursor::before {
-  content: "Glimpse"; /* Now it works */
-  color: black;
-  font-size: 16px;
-  font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
+
 .floating_bar{
   z-index: 1000;
   position: fixed;
