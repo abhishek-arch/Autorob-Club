@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+}
+
+/* Track (Background of scrollbar) */
+::-webkit-scrollbar-track {
+  background: #121212; /* Light background */
+  border-radius: 20px; /* Rounded edges */
+}
+
+/* Scrollbar Handle (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff7eb3, #ff758c); /* Gradient color */
+  border-radius: 20px; /* Rounded corners */
+}
+
+/* Scrollbar Handle on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff758c, #ff5e62);
+}
+
