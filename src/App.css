@@ -1,40 +1,37 @@
-.Autorob-text{
+.Autorob-text {
   font-size: 59px;
-      background: linear-gradient(
-          to right,
-          #7953cd 20%,
-          #00affa 30%,
-          #0190cd 70%,
-          #764ada 80%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 500% auto;
-      animation: textShine 5s ease-in-out infinite alternate;
-  
- 
+  background: linear-gradient(
+    to right,
+    #7953cd 20%,
+    #00affa 30%,
+    #0190cd 70%,
+    #764ada 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
 }
 @keyframes textShine {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   100% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
 }
-@media  (max-width: 768px){
-  .Autorob-text{
+@media (max-width: 768px) {
+  .Autorob-text {
     font-size: 200%;
   }
-  
 }
-.floating_bar{
+.floating_bar {
   z-index: 1000;
   position: fixed;
   right: -100%;
   background-color: black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 400;
   opacity: 0;
   transition: all ease 0.5s;
@@ -44,7 +41,7 @@
   opacity: 1;
 }
 
-.cursor{
+.cursor {
   width: 50px;
   height: 50px;
   background-color: aliceblue;
@@ -60,4 +57,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.member {
+  position: relative;
+  animation: moveLeftRight 10s linear infinite;
+}
+
+  @keyframes moveLeftRight {
+    0%   { left: 0%; }
+    50%  { left: 10%; } /* Adjust position */
+    100% { left: 0%; }
+} 
+
+.member_card {
+  display: flex;
+  gap: 10px;
+}
+.cardcontent {
+  width: 50%;
+  height: 50px;
+  /* border-radius: 100%; */
+}
+
+@media screen and (max-width: 768px){
+  .member{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+    animation:move  10s linear infinite;
+
+  }
+  @keyframes move {
+   0% {
+    transform: translateX(-120%);
+    }
+    50% {
+      transform: translateX(30%);
+    }
+    100%{
+      transform: translateX(-120%);
+    }
+} 
+  
 }
