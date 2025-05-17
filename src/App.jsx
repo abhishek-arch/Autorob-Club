@@ -266,6 +266,11 @@ function MemberSection() {
 
       {teamsData.map((teamObj, index) => (
         <section key={index} className="relative z-1 py-8 text-center">
+           <div className="final flex justify-center items-center flex-wrap ">
+            <h2 className="text-5xl font-bold mt-[7rem] z-1 relative text-indigo-300">
+              {teamObj.team}
+            </h2>
+          </div>
           <div className="member grid md:grid-cols-6 gap-0 px-[5px] mr-8">
             {teamObj.members.map((member, idx) => (
               <Card
@@ -282,11 +287,7 @@ function MemberSection() {
               </Card>
             ))}
           </div>
-          <div className="final flex justify-center items-center flex-wrap ">
-            <h2 className="text-5xl font-bold mt-[7rem] z-1 relative text-indigo-300">
-              {teamObj.team}
-            </h2>
-          </div>
+         
         </section>
       ))}
     </>
