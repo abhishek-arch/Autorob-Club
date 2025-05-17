@@ -99,4 +99,13 @@
     }
 } 
   
+.card{
+  background-color: rgba(120, 121, 106, 0.17);
+/* backdrop-filter: blur(); */
+/* opacity: 0.5; */
+}
+.card p{
+  color: white;
+}
+
 }

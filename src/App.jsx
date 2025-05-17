@@ -63,7 +63,7 @@ function ClubActivities() {
         {activities.map((activity, index) => (
           <Card
             key={index}
-            className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-blue-400 transition duration-300"
+            className="bg-gray-800 card p-8 rounded-lg shadow-lg hover:shadow-blue-400 transition duration-300"
           >
             <CardContent className="text-center">
               {activity.icon}
