@@ -81,84 +81,218 @@ function ClubActivities() {
   );
 }
 
+
 function MemberSection() {
-  const members = [
+  const teamsData = [
     {
-      name: "Pragya",
-      role: "President",
-      img: "https://via.placeholder.com/150",
-      icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+      team: "Final Year",
+      members: [
+        {
+          name: "Pragya",
+          role: "President",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Namo",
+          role: "Vice President",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+      ],
     },
     {
-      name: "Namo",
-      role: "Vice President",
-      img: "https://via.placeholder.com/150",
-      icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+      team: "Third Year",
+      members: [
+        {
+          name: "Arnav",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Ayush",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Akshat",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Rishabh",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Shaivi",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Deepak",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Akshat",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Rishabh",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Akshat",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Rishabh",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+      
+
+      ],
+
+
+      
     },
     {
-      name: "Arnav",
-      role: "Head",
-      img: "https://via.placeholder.com/150",
-      icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-    },
-    {
-      name: "Ayush",
-      role: "Head",
-      img: "https://via.placeholder.com/150",
-      icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-    },
-    {
-      name: "Akshat",
-      role: "Head",
-      img: "https://via.placeholder.com/150",
-      icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-    },
-    {
-      name: "Rishabh",
-      role: "Head",
-      img: "https://via.placeholder.com/150",
-      icon: <FaUser size={50} className="text-blue-400 " />,
+      team: "Second Year",
+      members: [
+        {
+          name: "Abhishek",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Nishant",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Vanshika",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Nishtha",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Bhoomi",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Swati",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Kartik",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Satvik",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Pushkin",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Ayushi",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Harsh",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Yuvraj",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Vipranshu",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Rahul",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "khushi",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Vaibhav",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Ashwani",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+        {
+          name: "Isha",
+          role: "Head",
+          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
+        },
+      ],
     },
   ];
 
-  const teams = ["Final Year", "Third Year", "Second Year"];
   return (
-    <> <div className="flex justify-center items-center flex-wrap">
-<h2 className="text-4xl font-bold mb-6 text-blue-400">
-        Meet Our Members
-      </h2>
-    </div>
-    
-      {teams.map((team, index) => (
-        <section key={index} className="relative -z-1 py-8 text-center">
-      
-      <div className=" member grid md:grid-cols-6 gap-0  px-[5px] mr-8">
-        {members.map((member, index) => (
-          <Card
-            key={index}
-            className="member_card flex justify-center items-center w-[125px] h-[125px] rounded-full bg-gray-800  shadow-lg hover:shadow-blue-400 transition duration-300"
-          >
-            <CardContent className="cardcontent  text-center">
-              {member.icon}
-              {/* <img src={member.img} alt={member.name} className="w-32  rounded-full mx-auto  transition transform hover:scale-110" /> */}
-              <h3 className="text-2xl text-center font-semibold text-blue-300 mt-12 pt-2">
-                {member.name}
-              </h3>
-              <p className="text-gray-400">{member.role}</p>
-            </CardContent>
-          </Card>
-        ))}
-     
+    <>
+      <div className="flex justify-center items-center flex-wrap">
+        <h2 className="text-4xl font-bold mb-6 text-blue-400">
+          Meet Our Members
+        </h2>
       </div>
-      <div className="final flex justify-center items-center flex-wrap">
-          <h2 className="text-5xl font-bold mt-[7rem] fon z-1 relative text-indigo-300">
-            {team}
-          </h2>
-        </div>
-    </section>))}
+
+      {teamsData.map((teamObj, index) => (
+        <section key={index} className="relative z-1 py-8 text-center">
+          <div className="member grid md:grid-cols-6 gap-0 px-[5px] mr-8">
+            {teamObj.members.map((member, idx) => (
+              <Card
+                key={idx}
+                className="member_card flex justify-center items-center w-[125px] h-[125px] rounded-full bg-gray-800 shadow-lg hover:shadow-blue-400 transition duration-300 mb-[80px]"
+              >
+                <CardContent className="cardcontent text-center ">
+                  {member.icon}
+                  <h3 className="text-2xl text-center font-semibold text-blue-300 mt-12 pt-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-gray-400">{member.role}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="final flex justify-center items-center flex-wrap ">
+            <h2 className="text-5xl font-bold mt-[7rem] z-1 relative text-indigo-300">
+              {teamObj.team}
+            </h2>
+          </div>
+        </section>
+      ))}
     </>
   );
 }
+
 
 function Footer() {
   return (
