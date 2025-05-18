@@ -11,7 +11,7 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef , useMemo} from "react";
 import "./index.css";
 import "./App.css";
 import Cross from "./Cross.svg";
@@ -82,8 +82,8 @@ function ClubActivities() {
 }
 
 
-function MemberSection() {
-  const teamsData = [
+function MemberSection()  {
+  const teamsData = useMemo(()=>[
     {
       team: "Final Year",
       members: [
@@ -254,7 +254,7 @@ function MemberSection() {
         },
       ],
     },
-  ];
+  ],[]);
 
   return (
     <>
@@ -304,7 +304,7 @@ function Footer() {
       </p>
       <div className="flex justify-center gap-8 mt-6">
         <a
-          href="https://www.instagram.com/autorob_hbtu/"
+          href="https://www.linkedin.com/company/autorob-club-hbtu-kanpur/posts/?feedView=all"
           className="text-blue-400 hover:text-white text-4xl transition duration-300"
         >
           <FaLinkedin />
