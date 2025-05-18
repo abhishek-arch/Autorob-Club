@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useState, useRef , useMemo} from "react";
+import { useState, useRef, useMemo } from "react";
 import "./index.css";
 import "./App.css";
 import Cross from "./Cross.svg";
@@ -82,180 +82,57 @@ function ClubActivities() {
   );
 }
 
-
-function MemberSection()  {
-  const teamsData = useMemo(()=>[
-    {
-      team: "Final Year",
-      members: [
-        {
-          name: "Pragya",
-          role: "President",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Namo",
-          role: "Vice President",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-      ],
-    },
-    {
-      team: "Third Year",
-      members: [
-        {
-          name: "Arnav",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Ayush",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Akshat",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Rishabh",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Shaivi",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Deepak",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Akshat",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Rishabh",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Akshat",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Rishabh",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-      
-
-      ],
-
-
-      
-    },
-    {
-      team: "Second Year",
-      members: [
-        {
-          name: "Abhishek",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Nishant",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Vanshika",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Nishtha",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Bhoomi",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Swati",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Kartik",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Satvik",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Pushkin",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Ayushi",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Harsh",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Yuvraj",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Vipranshu",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Rahul",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "khushi",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Vaibhav",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Ashwani",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-        {
-          name: "Isha",
-          role: "Head",
-          icon: <FaUser size={50} className="text-blue-400 mx-auto" />,
-        },
-      ],
-    },
-  ],[]);
+function MemberSection() {
+  const teamsData = useMemo(
+    () => [
+      {
+        team: "Final Year",
+        members: [
+          { name: "Pragya", role: "President" },
+          { name: "Namo", role: "Vice President" },
+        ],
+      },
+      {
+        team: "Third Year",
+        members: [
+          { name: "Arnav", role: "Head" },
+          { name: "Ayush", role: "Head" },
+          { name: "Akshat", role: "Head" },
+          { name: "Rishabh", role: "Head" },
+          { name: "Shaivi", role: "Head" },
+          { name: "Deepak", role: "Head" },
+          { name: "Akshat", role: "Head" },
+          { name: "Rishabh", role: "Head" },
+          { name: "Akshat", role: "Head" },
+          { name: "Rishabh", role: "Head" },
+        ],
+      },
+      {
+        team: "Second Year",
+        members: [
+          { name: "Abhishek", role: "Head" },
+          { name: "Nishant", role: "Head" },
+          { name: "Vanshika", role: "Head" },
+          { name: "Nishtha", role: "Head" },
+          { name: "Bhoomi", role: "Head" },
+          { name: "Swati", role: "Head" },
+          { name: "Kartik", role: "Head" },
+          { name: "Satvik", role: "Head" },
+          { name: "Pushkin", role: "Head" },
+          { name: "Ayushi", role: "Head" },
+          { name: "Harsh", role: "Head" },
+          { name: "Yuvraj", role: "Head" },
+          { name: "Vipranshu", role: "Head" },
+          { name: "Rahul", role: "Head" },
+          { name: "khushi", role: "Head" },
+          { name: "Vaibhav", role: "Head" },
+          { name: "Ashwani", role: "Head" },
+          { name: "Isha", role: "Head" },
+        ],
+      },
+    ],
+    []
+  );
 
   return (
     <>
@@ -265,42 +142,11 @@ function MemberSection()  {
         </h2>
       </div>
 
-      {/* {teamsData.map((teamObj, index) => (
-        <section key={index} className="relative z-1 py-8 text-center">
-           <div className="final flex justify-center items-center flex-wrap ">
-            <h2 className="text-5xl font-bold mt-[7rem] z-1 relative text-indigo-300">
-              {teamObj.team}
-            </h2>
-          </div>
-          <div className="member grid md:grid-cols-6 gap-0 px-[5px] mr-8">
-            {teamObj.members.map((member, idx) => (
-              <Card
-                key={idx}
-                className="member_card flex justify-center items-center w-[125px] h-[125px] rounded-full bg-gray-800 shadow-lg hover:shadow-blue-400 transition duration-300 mb-[80px]"
-              >
-                <CardContent className="cardcontent text-center ">
-                  {member.icon}
-                  <h3 className="text-2xl text-center font-semibold text-blue-300 mt-12 pt-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-400">{member.role}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-         
-        </section>
-      ))}
-    </>
-  );
-} */}
-
-
-{teamsData.map((teamObj, index) => {
-        const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 }); // <-- LAZY LOADING EACH TEAM
+      {teamsData.map((teamObj, index) => {
+        const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 }); // ✅ LAZY LOADING OPTIMIZATION
 
         return (
-          <section key={index} className="relative z-1 py-8 text-center" ref={ref}>
+          <section key={index} className="relative z-1 py-8 text-center" ref={ref}> {/* ✅ ADDED ref FOR INTERSECTION OBSERVER */}
             <div className="final flex justify-center items-center flex-wrap ">
               <h2 className="text-5xl font-bold mt-[7rem] z-1 relative text-indigo-300">
                 {teamObj.team}
@@ -314,7 +160,7 @@ function MemberSection()  {
                     className="member_card flex justify-center items-center w-[125px] h-[125px] rounded-full bg-gray-800 shadow-lg hover:shadow-blue-400 transition duration-300 mb-[80px]"
                   >
                     <CardContent className="cardcontent text-center ">
-                      <FaUser size={50} className="text-blue-400 mx-auto" />
+                      <FaUser size={50} className="text-blue-400 mx-auto" /> {/* ✅ MOVED ICON HERE FOR CONSISTENCY */}
                       <h3 className="text-2xl text-center font-semibold text-blue-300 mt-12 pt-2">
                         {member.name}
                       </h3>
@@ -334,7 +180,6 @@ function MemberSection()  {
     </>
   );
 }
-
 
 function Footer() {
   return (
@@ -433,7 +278,6 @@ export default function AutoRobClub() {
       <Header />
       <ClubActivities />
       <MemberSection />
-
       <Footer />
     </div>
   );
