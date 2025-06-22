@@ -1,7 +1,9 @@
 import React from 'react'
-import autoroblogo from './assets/Autoroblogo.png'
-import './Navbar.css'
-import hamburger from './hamburger.svg'
+import autoroblogo from '../assets/images/autoroblogo.png'
+import '../Css/Navbar.css'
+import hamburger from '../assets/images/hamburger.svg'
+import { Link } from 'react-router-dom'
+
  
 const navbar = ({isopen , setisopen}) => {
 
@@ -19,8 +21,9 @@ const navbar = ({isopen , setisopen}) => {
         <ul className='flex navbar justify-end gap-4 p-2 items-center text-white cursor-pointer text-lg font-semibold'>
         <li><a href="#" className="hover:text-blue-400 inline-block hover:scale-125">Home</a></li>
         <li><a href="#" className="hover:text-blue-400 inline-block  hover:scale-125">Library</a></li>
-        <li><a href="#" className="hover:text-blue-400 inline-block hover:scale-125">Sign In</a></li>
-        <li><a href="#" className="hover:text-blue-400 inline-block hover:scale-125">Login</a></li>
+       
+        <li><Link to="/Autorob-Club/usersignup" className="hover:text-blue-400 inline-block hover:scale-125">Sign In</Link></li>
+        <li><Link to="/Autorob-Club/userlogin" className="hover:text-blue-400 inline-block hover:scale-125">Login</Link></li>
         </ul> 
         <div  className="hamburger border-2 mr-4 " ><img  className='invert' src={hamburger} alt="" onClick={mouseclick}   /></div>
       </div>
