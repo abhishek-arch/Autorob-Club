@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import { useState, useRef, } from "react";
 import "./Css/index.css";
 import "./Css/App.css";
-import Cross from "./assets/images/cross.svg";
+import Cross from "./assets/images/Cross.svg";
 import Spline from "./components/Spline";
 import ClubActivities from "./components/ClubActivities";
 import MemberSection from "./components/Members";
