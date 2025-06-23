@@ -12,7 +12,7 @@ connectDB()
 
 
 const allowedOrigins = [
-  'https://autorob-club.vercel.app',
+  'https://autorob-club-frontend.onrender.com',
   'https://abhishek-arch.github.io/Autorob-Club/'
 ];
 // app.use(cors({ origin: 'http://localhost:5173', credentials: true }))
