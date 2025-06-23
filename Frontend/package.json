@@ -1,6 +1,8 @@
 {
   "name": "autorob",
-  "homepage": "https://abhishek-arch.github.io/Autorob-Club/",
+  "homepage": ".",
+
+  // "homepage": "https://abhishek-arch.github.io/Autorob-Club/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
