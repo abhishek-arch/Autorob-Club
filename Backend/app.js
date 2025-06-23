@@ -11,7 +11,7 @@ const connectDB = require("./db/db")
 connectDB()
 
 
-const cors = require("cors");
+
 
 const allowedOrigins = [
   'https://autorob-club.vercel.app',
