@@ -22,7 +22,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // optional aliases if needed
+      '@': path.resolve(__dirname, 'src'),
     },
   },
 });
