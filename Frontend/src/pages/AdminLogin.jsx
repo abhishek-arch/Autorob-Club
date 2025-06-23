@@ -1,5 +1,5 @@
 import { useState,useContext,} from 'react'
-import AutoRoblogo from '../assets/images/autoroblogo.png'
+import AutoRoblogo from '../assets/images/Autoroblogo.png'
 import { Link,useNavigate } from 'react-router-dom'
 import homesvg from '../assets/images/home.svg'
 import axios from 'axios'

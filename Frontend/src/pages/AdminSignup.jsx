@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useState } from 'react'
-import AutoRoblogo from '../assets/images/autoroblogo.png'
+import AutoRoblogo from '../assets/images/Autoroblogo.png'
 import homesvg from '../assets/images/home.svg'
 import { AdminContextData } from '../Context/AdminContext'
 
