@@ -17,7 +17,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/' || "/Autorob-Club/tree/main/Frontend",
+  base: '/Autorob-Club/' || "/Autorob-Club/tree/main/Frontend",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
