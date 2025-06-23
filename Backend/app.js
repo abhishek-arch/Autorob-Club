@@ -11,25 +11,29 @@ const connectDB = require("./db/db")
 connectDB()
 
 
+const cors = require("cors");
+
 const allowedOrigins = [
   'https://autorob-club.vercel.app',
   'https://autorob-club-frontend.onrender.com'
 ];
-// app.use(cors({ origin: 'http://localhost:5173', credentials: true }))
-app.use(cors({
+
+const corsOptions = {
   origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // for mobile apps or tools like curl
+    if (!origin) return callback(null, true); // Allow Postman, curl etc.
     if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
+      callback(null, true);
     } else {
-      return callback(new Error('CORS blocked for origin: ' + origin));
+      callback(new Error('Not allowed by CORS: ' + origin));
     }
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
-}));
-app.options('*', cors());
+};
+
+app.use(cors(corsOptions)); // ✅ only use this
+
 
 
 
