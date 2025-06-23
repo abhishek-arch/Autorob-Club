@@ -38,7 +38,7 @@ const Adminlogin = () => {
             <div className='flex justify-between items-center'>
               <img className='w-52 mb-2 invert' src={AutoRoblogo} alt="" srcset="" />
               <div>
-                  <Link to="/Autorob-Club" className=' cursor-pointer'>
+                  <Link to="/" className=' cursor-pointer'>
               <img className='w-12 ' src={homesvg} alt="" />
               </Link>
 
