@@ -13,26 +13,25 @@ connectDB()
 
 
 
+
 const allowedOrigins = [
   'https://autorob-club.vercel.app',
   'https://autorob-club-frontend.onrender.com'
 ];
 
-const corsOptions = {
+app.use(cors({
   origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // Allow Postman, curl etc.
+    if (!origin) return callback(null, true); // Allow Postman/curl etc.
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS: ' + origin));
+      callback(new Error('CORS blocked for origin: ' + origin));
     }
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-app.use(cors(corsOptions)); // ✅ only use this
+}));
 
 
 
