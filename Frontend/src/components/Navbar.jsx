@@ -1,5 +1,5 @@
 import React from 'react'
-import autoroblogo from '../assets/images/autoroblogo.png'
+import autoroblogo from '../assets/images/Autoroblogo.png'
 import '../Css/Navbar.css'
 import hamburger from '../assets/images/hamburger.svg'
 import { Link } from 'react-router-dom'
