@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path='/Autorob-Club' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/Autorob-Club/userlogin' element={<UserLogin />} />
         <Route path='/Autorob-Club/usersignup' element={<UserSignup />} />
         <Route path='/Autorob-Club/adminsignup' element={<AdminSignup />} />
