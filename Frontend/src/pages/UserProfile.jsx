@@ -10,6 +10,7 @@ import AutoRoblogo from "../assets/images/Autoroblogo.png"
 const ProfileDashboard = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [imageUpdated, setImageUpdated] = useState(false)
+  const[phoneNo,setPhoneNo]             = useState(null)
   
   const token = localStorage.getItem('token')
   const navigate = useNavigate()
@@ -42,9 +43,10 @@ const [formData, setFormData] = useState({
       expertise: 'UI/UX Designer',
       gender: 'Male',
       email: user.email ,
-      phone: '+910345678990',
+      phone: user.phoneNo,   
       RollNo: user.RollNo ,
     });
+    setPhoneNo(user.phoneNo)
 
      const profiledata ={
         fullname:{
@@ -53,7 +55,7 @@ const [formData, setFormData] = useState({
       expertise: 'UI/UX Designer',
       gender: 'Male',
       email: user.email ,
-      phone: '+880345678990',
+      phone: phoneNo,
       RollNo: user.RollNo ,
       Branch: user.Branch,
       profilephoto: "profilephoto.jpg"
@@ -197,7 +199,7 @@ const [formData, setFormData] = useState({
               <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore labore, earum ad cum vel in quaerat, eius accusantium quas nam, iusto delectus ut nulla.</p>
               <div className="mt-2 space-x-4 text-sm">
                 <span className="text-blue-600"> Kanpur 3564</span>
-                <span className="text-blue-600">{formData.phone}</span>
+                <span onChange={(e)=> setPhoneNo(e.target.value)} value={phoneNo} className="text-blue-600">{formData.phone}</span>
                 <span className="text-blue-600">{formData.email}</span>
               </div>
             </div>

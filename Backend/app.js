@@ -16,6 +16,7 @@ connectDB()
 
 const allowedOrigins = [
   'https://autorob-club.vercel.app',
+  'http://localhost:5173',
   'https://autorob-club-frontend.onrender.com'
 ];
 
