@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState ,useEffect,useRef} from 'react';
 import { FaCamera } from 'react-icons/fa';
 import { FiBell, FiSearch, FiUser } from 'react-icons/fi';
 import { BsThreeDotsVertical } from 'react-icons/bs';
@@ -6,11 +6,21 @@ import { MdOutlineDashboard, MdOutlineLibraryBooks, MdInfo } from 'react-icons/m
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import AutoRoblogo from "../assets/images/Autoroblogo.png"
+import { MdDelete } from "react-icons/md";
+import LibrarySection from '../components/LibrarySection';
+import gsap from "gsap";
+import {useGSAP} from '@gsap/react'
+
+
 
 const ProfileDashboard = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [imageUpdated, setImageUpdated] = useState(false)
   const[phoneNo,setPhoneNo]             = useState(null)
+  const[boolean, setBoolean] = useState(false)
+const libraryRef = useRef(null);
+const mainRef = useRef(null);
+
   
   const token = localStorage.getItem('token')
   const navigate = useNavigate()
@@ -30,37 +40,37 @@ const [formData, setFormData] = useState({
   useEffect(() => {
     
    
-    axios.get(`${import.meta.env.VITE_BASE_URL}/users/profile`,{
+    axios.get(`${import.meta.env.VITE_BASE_URL}/admins/profile`,{
         headers:{
             Authorization: `Bearer ${token}`
         },
          
     }).then(response=>{
-       const user = response.data.user;
+       const admin = response.data.admin;
     setFormData({
-      firstname: user.fullname.firstname,
-      lastname: user.fullname.lastname ,
+      firstname: admin.fullname.firstname,
+      lastname: admin.fullname.lastname ,
       expertise: 'UI/UX Designer',
       gender: 'Male',
-      email: user.email ,
-      phone: user.phoneNo,   
-      RollNo: user.RollNo ,
+      email: admin.email ,
+      phone: admin.phoneNo,   
+      RollNo: admin.RollNo ,
     });
-    setPhoneNo(user.phoneNo)
+    setPhoneNo(admin.phoneNo)
 
      const profiledata ={
         fullname:{
-      firstname: user.fullname.firstname,
-      lastname: user.fullname.lastname },
+      firstname: admin.fullname.firstname,
+      lastname: admin.fullname.lastname },
       expertise: 'UI/UX Designer',
       gender: 'Male',
-      email: user.email ,
+      email: admin.email ,
       phone: phoneNo,
-      RollNo: user.RollNo ,
-      Branch: user.Branch,
+      RollNo: admin.RollNo ,
+      Branch: admin.Branch,
       profilephoto: "profilephoto.jpg"
     };
-     axios.post(`${import.meta.env.VITE_BASE_URL}/users/dashboard`,profiledata,{
+     axios.post(`${import.meta.env.VITE_BASE_URL}/admins/dashboard`,profiledata,{
             headers:{
             Authorization: `Bearer ${token}`
           
@@ -68,13 +78,13 @@ const [formData, setFormData] = useState({
         
     })
 
-       axios.get(`${import.meta.env.VITE_BASE_URL}/users/dashboard`,{ 
+       axios.get(`${import.meta.env.VITE_BASE_URL}/admins/dashboard`,{ 
         headers:{
             Authorization: `Bearer ${token}`
           
     }}).then(response=>{
-        const user = response.data.existingUserprofile;
-        const profilephoto =user.profilephoto.url
+        const admin = response.data.existingAdminprofile;
+        const profilephoto =admin.profilephoto.url
         setProfileImage(profilephoto)
 
     })
@@ -85,7 +95,7 @@ const [formData, setFormData] = useState({
     .catch(err=>{
         console.log(err)
         localStorage.removeItem('token')
-        navigate('/Autorob-Club/userlogin')
+        navigate('/Autorob-Club/adminlogin')
     })
 
 
@@ -109,6 +119,28 @@ const [formData, setFormData] = useState({
    
     
 
+ const handlelibrary = () => {
+  setBoolean(prev => !prev);
+  
+
+ }
+
+
+  useGSAP(function() {
+    if(boolean){
+        
+         gsap.to(libraryRef.current, { display:"", top:"0px" ,duration: 0.5});
+
+    }
+    else{
+        gsap.to(libraryRef.current, { display:"none", top:"-150px" ,duration: 0});
+        
+   
+  } }[boolean]);
+
+
+
+
   
  
   
@@ -120,7 +152,7 @@ const [formData, setFormData] = useState({
     formDataData.append('image', file); 
 
     await axios.post(
-      `${import.meta.env.VITE_BASE_URL}/users/upload`,
+      `${import.meta.env.VITE_BASE_URL}/admins/upload`,
       formDataData,
       {
         headers: {
@@ -170,12 +202,32 @@ const [formData, setFormData] = useState({
             <MdOutlineDashboard /> <span>Dashboard</span>
           </div>
           {/* <div className="text-sm text-gray-600 ml-6 mb-2">Student About</div> */}
-        
+          <div onClick={handlelibrary} className={`text-sm  ml-6 mb-2 flex items-center ${boolean ? "text-blue-600" :"text-gray-600"} space-x-2`}>
+            <MdOutlineLibraryBooks /> <span>Library</span>
+          </div>
+          <div className="text-sm text-gray-600 ml-6 flex items-center space-x-2">
+            <MdInfo /> <span>About</span>
+          </div>
         </nav>
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 p-4 md:p-6">
+
+
+
+
+
+    < LibrarySection booleanAdmin={boolean} setbooleanAdmin={setBoolean} />
+
+
+
+      
+
+
+
+
+
+      <main ref={mainRef} className={`flex-1 p-4  md:p-6 ${boolean ? "hidden" : ""}`}>
         {/* Top header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
           <input type="text" placeholder="Search..." className="px-4 py-2 border rounded-md w-full md:w-80" />
@@ -191,7 +243,7 @@ const [formData, setFormData] = useState({
           <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
             <div>
               <h2 className="text-2xl font-bold">{formData.firstname} {formData.lastname}</h2>
-              <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore labore, earum ad cum vel in quaerat, eius accusantium quas nam, iusto delectus ut nulla.</p>
+              {/* <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore labore, earum ad cum vel in quaerat, eius accusantium quas nam, iusto delectus ut nulla.</p> */}
               <div className="mt-2 space-x-4 text-sm">
                 <span className="text-blue-600"> Kanpur 3564</span>
                 <span onChange={(e)=> setPhoneNo(e.target.value)} value={phoneNo} className="text-blue-600">{formData.phone}</span>

@@ -3,6 +3,7 @@ import AutoRoblogo from '../assets/images/Autoroblogo.png'
 import { Link, useNavigate } from 'react-router-dom'
 import homesvg from '../assets/images/home.svg'
 import {UserContextData} from '../Context/UserContext'
+import { ToastContainer, toast } from "react-toastify";
 
 
 const Usersignup = () => {
@@ -12,13 +13,15 @@ const Usersignup = () => {
     const [lastName, setlastName] = useState("")
     const [Branch, setBranch] = useState("")
     const [RollNo, setRollNo] = useState("")
+    const[loading, setLoading] = useState(false)
+
     
     const navigate = useNavigate()
 
   const{user, setUser} = useContext(UserContextData)
     const handlesubmit = (e) => {
         e.preventDefault()
-
+ setLoading(true)
        
         const payload = {
           "fullname":{
@@ -48,20 +51,55 @@ const Usersignup = () => {
             navigate('/Autorob-Club/user-home')
 
           }
-        })
-          
-        
-       setFirstName("")
+           else{
+            const data = await Response.json()
+            toast.error(data.message, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+
+            });
+
+               setLoading(false)
+                setFirstName("")
        setlastName("")
         setemail("")
         setPassword("")
         setBranch("")
         setRollNo("")
+          }})
+          
+          
+
+    
+          
+        
+      
     }
 
 
 
    return (
+    <>
+    <ToastContainer
+      
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
      <div className='p-7 flex h-screen flex-col justify-between'>
          <div>
             <div className='flex justify-between items-center'>
@@ -99,7 +137,7 @@ const Usersignup = () => {
          type="text"
          name='lastname'
          placeholder='Lastname' 
-         alue={lastName} 
+         value={lastName} 
          onChange={(e) => setlastName(e.target.value)} />
  
  
@@ -126,7 +164,7 @@ const Usersignup = () => {
          type="text"
          name='Branch'
          placeholder='Branch' 
-         alue={Branch} 
+         value={Branch} 
          onChange={(e) => setBranch(e.target.value)} />
  
  
@@ -168,8 +206,8 @@ const Usersignup = () => {
          value={password}
          onChange={(e) => setPassword(e.target.value)}
          />
-         
-         <button className=' bg-[#111] text-white font-semibold  px-4 py-2 rounded mb-3 w-full text-lg placeholder:text-base' type='submit'>Signup</button>
+        
+          <button disabled={loading} className=' bg-[#111] text-white font-semibold  px-4 py-2 rounded mb-3 w-full text-lg placeholder:text-base' type='submit'> {loading ? "Loading..." : "SignUp"}</button>
  
  
          
@@ -193,6 +231,7 @@ const Usersignup = () => {
          </div>
  
      </div>
+     </>
    )
  }
 

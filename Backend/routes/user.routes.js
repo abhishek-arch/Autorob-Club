@@ -104,16 +104,6 @@ router.get('/profile',authMiddleware.authenticateUser, async(req,res)=>{
     const publicId = req.file.filename;
    
 
-// if (!user) {
-//       return res.status(404).json({ message: 'User not found with this email' });
-//     }
-//     if (user.profilephoto) {
-      
-//       const oldImagePath = path.join(__dirname, '../public/images/uploads/',user.profilephoto);
-    
-//        if (fs.existsSync(oldImagePath)) {
-//         fs.unlinkSync(oldImagePath);
-//       }}
 
 
       try {

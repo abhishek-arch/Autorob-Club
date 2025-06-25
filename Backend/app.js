@@ -3,6 +3,7 @@ const app = express()
 const dotenv = require("dotenv")
 const userroute = require("./routes/user.routes")
 const adminroute = require("./routes/admin.routes")
+const libraryroute = require("./routes/library.routes")
 const path = require('path')
 
 const cors = require("cors")
@@ -43,6 +44,7 @@ app.use(express.json({ limit: '10mb' })); // or more
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use('/users', userroute)
 app.use('/admins', adminroute)
+app.use('/library', libraryroute)
 
 
 app.get('/',(req,res)=>{

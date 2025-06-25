@@ -1,6 +1,6 @@
 const adminmodel = require('../db/Models/admin.model');
 
-const createAdmin = async ({ fullname: { firstname, lastname }, email, password,Branch,RollNo}) => {
+const createAdmin = async ({ fullname: { firstname, lastname }, email, password,Branch,RollNo,AdminKey}) => {
     if (!email || !password || !firstname  ||!Branch || !RollNo) {
         throw new Error('All fields are required');
     }
@@ -23,7 +23,8 @@ const createAdmin = async ({ fullname: { firstname, lastname }, email, password,
         RollNo,
         Branch,
         email,
-        password
+        password,
+        AdminKey
     });
 
     return admin;

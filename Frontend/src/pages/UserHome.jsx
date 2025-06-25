@@ -11,7 +11,7 @@ import Spline from "../components/Spline";
 import ClubActivities from "../components/ClubActivities";
 import MemberSection from "../components/Members";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
     
@@ -24,6 +24,9 @@ export default function AutoRobClub() {
     setisopen(!isopen);
   };
 
+  const navigate = useNavigate();
+
+  
   
 
   return (
@@ -51,13 +54,15 @@ export default function AutoRobClub() {
               onClick={mouseclick}
             />
           </div>
-          <li>
-            <a
-              href="#"
+          <li >
+            <Link
+              to="/Autorob-Club/library"
+       
               className="hover:text-blue-400 inline-block  hover:scale-125"
             >
               Library
-            </a>
+            </Link>
+         
           </li>
           <li>
             <Link
@@ -70,7 +75,7 @@ export default function AutoRobClub() {
           </li>
           <li>
             <Link
-              to="/Autorob-Club/UserLogin"
+              to="/Autorob-Club/userlogin"
               
               className="hover:text-blue-400 inline-block hover:scale-125"
             >

@@ -75,7 +75,7 @@ function MemberSection() {
         const { ref, inView } = useInView({
           triggerOnce: true,
           threshold: 0.2,
-        }); // ✅ LAZY LOADING OPTIMIZATION
+        }); 
 
         return (
           <section
@@ -84,7 +84,7 @@ function MemberSection() {
             ref={ref}
           >
             {" "}
-            {/* ✅ ADDED ref FOR INTERSECTION OBSERVER */}
+            
             <div className="final flex justify-center items-center flex-wrap mb-4 ">
               <h2 className="text-5xl font-bold mt-[7rem] z-1 relative text-indigo-300">
                 {teamObj.team}
