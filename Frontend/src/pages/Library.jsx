@@ -23,6 +23,7 @@ const Library = () => {
     }).then((response) => {
     if (response.status === 200) {
         const data = response.data.libraries;
+     
         setinventary(data)
         
     }}).catch((error) => {
@@ -32,10 +33,9 @@ const Library = () => {
 
 
 
-//  setinventary([{img:img,Available:Available,Product:"Arduino",Detail:"lorerm"},
-//     {img:img,Available:Available,Product:"Motor driver",Detail:"lorerm"}
 
-//  ])
+
+
  
   
  }, [])
@@ -79,8 +79,8 @@ const Library = () => {
             {inventary.map((obj,index)=>{
                 return(
                     <div key={index} className='flex gap-2 mb-2'>
-                        <div className='w-[25vw]  rounded-full overflow-hidden '>
-            <img className='object-cover' src={obj.ProductUrl} alt="" />
+                        <div className='  overflow-hidden '>
+            <img className='w-24 h-24 object-cover rounded-full border-2' srcSet={obj.ProductImage.url} alt="" />
             
         </div>
             <div className='w-[75vw]  flex flex-col px-2 box-border'>

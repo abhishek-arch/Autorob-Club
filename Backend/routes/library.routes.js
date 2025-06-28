@@ -3,16 +3,24 @@ const createLibrary = require('../Createdb/librarydb');
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middlewares/auth.middleware');
-const upload = require('../config/multer.config');
+const { inventaryUpload } = require('../config/multer.config');
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());
 
 
 
 
-router.post('/add', authMiddleware.authenticateAdmin, async (req, res) => {
- const { Product, Detail, Available, ProductUrl} = await req.body;
+router.post('/inventary', authMiddleware.authenticateAdmin,inventaryUpload.single("image"), async (req, res) => {
+ const { Product, Detail, Available, Adminkey} = await JSON.parse(req.body.Product);
 
+
+  const imageUrl = req.file.path;
+    const publicId = req.file.filename;
+   
+
+    if (Adminkey !== process.env.ADMIN_SECRET_Inventory ) {
+        return res.status(403).json({ message: 'Invalid admin key' });
+    }
     if (!Product || !Available) {
         return res.status(400).json({ message: 'Product and availability status are required' });
     }
@@ -23,8 +31,13 @@ router.post('/add', authMiddleware.authenticateAdmin, async (req, res) => {
             return res.status(400).json({ message: 'Product with this name already exists' });
         }
 
-        const library = await createLibrary({ Product, Detail, Available,ProductUrl });
+
+        const library = await createLibrary({ Product, Detail, Available,ProductImage:{url:imageUrl,public_id:publicId} });
+        if (!library) {
+            return res.status(500).json({ message: 'Error creating library item' });
+        }
         res.status(201).json({ message: 'Library item created successfully', library });
+        
     } catch (error) {
         res.status(500).json({ message: error.message });
         

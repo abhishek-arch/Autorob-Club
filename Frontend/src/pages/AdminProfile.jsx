@@ -10,10 +10,12 @@ import { MdDelete } from "react-icons/md";
 import LibrarySection from '../components/LibrarySection';
 import gsap from "gsap";
 import {useGSAP} from '@gsap/react'
+import EditProfile from '../components/AdminProfilEdit'
 
 
 
 const ProfileDashboard = () => {
+  const[isChanged, setIsChanged] = useState(false)
   const [profileImage, setProfileImage] = useState(null);
   const [imageUpdated, setImageUpdated] = useState(false)
   const[phoneNo,setPhoneNo]             = useState(null)
@@ -37,84 +39,31 @@ const [formData, setFormData] = useState({
 });
 
   
-  useEffect(() => {
-    
-   
-    axios.get(`${import.meta.env.VITE_BASE_URL}/admins/profile`,{
-        headers:{
-            Authorization: `Bearer ${token}`
-        },
-         
-    }).then(response=>{
-       const admin = response.data.admin;
-    setFormData({
-      firstname: admin.fullname.firstname,
-      lastname: admin.fullname.lastname ,
-      expertise: 'UI/UX Designer',
-      gender: 'Male',
-      email: admin.email ,
-      phone: admin.phoneNo,   
-      RollNo: admin.RollNo ,
-    });
-    setPhoneNo(admin.phoneNo)
+useEffect(() => {
 
-     const profiledata ={
-        fullname:{
-      firstname: admin.fullname.firstname,
-      lastname: admin.fullname.lastname },
-      expertise: 'UI/UX Designer',
-      gender: 'Male',
-      email: admin.email ,
-      phone: phoneNo,
-      RollNo: admin.RollNo ,
-      Branch: admin.Branch,
-      profilephoto: "profilephoto.jpg"
-    };
-     axios.post(`${import.meta.env.VITE_BASE_URL}/admins/dashboard`,profiledata,{
-            headers:{
-            Authorization: `Bearer ${token}`
-          
-    }
+
+
+  axios.get(`${import.meta.env.VITE_BASE_URL}/admins/dashboard`,{
+          headers:{
+              Authorization: `Bearer ${token}`
+          },
+           
+      }).then(response=>{
+         const admin = response.data.existingAdminprofile || response.data.admindashboard;
+         const profilephoto = admin.profilephoto?.url || "";
+         setProfileImage(profilephoto);
+         setFormData({
+           firstname: admin.fullname?.firstname || "",
+           lastname: admin.fullname?.lastname || "",
+         })
         
-    })
-
-       axios.get(`${import.meta.env.VITE_BASE_URL}/admins/dashboard`,{ 
-        headers:{
-            Authorization: `Bearer ${token}`
-          
-    }}).then(response=>{
-        const admin = response.data.existingAdminprofile;
-        const profilephoto =admin.profilephoto.url
-        setProfileImage(profilephoto)
-
-    })
-
-     
         
-    })
-    .catch(err=>{
-        console.log(err)
-        localStorage.removeItem('token')
-        navigate('/Autorob-Club/adminlogin')
-    })
-
-
- 
-       
-         
-    
-    
-  
-        
-   
-    
+//         
+})
 
 
 
-    
-  
-    
-  }, [imageUpdated])
+}, [imageUpdated])
   
    
     
@@ -140,12 +89,14 @@ const [formData, setFormData] = useState({
 
 
 
+ 
 
-  
+ 
  
   
 
   const handleImageUpload = async(e) => {
+   
     const file = e.target.files[0];
     if (file) {
        const formDataData = new FormData();
@@ -165,9 +116,7 @@ const [formData, setFormData] = useState({
 
   }};
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  
 
   return (
     <div className="min-h-screen bg-[#f5f6fa] flex flex-col md:flex-row">
@@ -234,50 +183,60 @@ const [formData, setFormData] = useState({
           <div className="flex items-center space-x-4">
             <FiBell className="text-xl" />
             <FiUser className="text-xl" />
-            <span className="font-medium">Bonnyra Jon</span>
+            <span className="font-medium"></span>
           </div>
         </div>
 
         {/* Profile Section */}
         <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
+
+            
+           
             <div>
               <h2 className="text-2xl font-bold">{formData.firstname} {formData.lastname}</h2>
               {/* <p className="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore labore, earum ad cum vel in quaerat, eius accusantium quas nam, iusto delectus ut nulla.</p> */}
               <div className="mt-2 space-x-4 text-sm">
-                <span className="text-blue-600"> Kanpur 3564</span>
+                <span className="text-blue-600">NawabGanj, Kanpur </span>
+              
                 <span onChange={(e)=> setPhoneNo(e.target.value)} value={phoneNo} className="text-blue-600">{formData.phone}</span>
                 <span className="text-blue-600">{formData.email}</span>
               </div>
             </div>
-            <div className="relative">
-              <img
-                src= {`${profileImage}` || 'https://www.svgrepo.com/show/447111/avatar-boy.svg'}
-            alt="Profile"
-                className="w-24 h-24 rounded-full border-2 object-cover"
-              />
-              <label htmlFor="image-upload" className="absolute bottom-0 right-0 p-2 bg-gray-800 text-white rounded-full cursor-pointer">
-                <FaCamera />
-              </label>
-              <input id="image-upload" type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
-            </div>
+
+
+
+           <div className="relative">
+  <img
+    src={profileImage || 'https://www.svgrepo.com/show/447111/avatar-boy.svg'}
+    alt="Profile"
+    className="w-24 h-24 rounded-full border-2 object-cover"
+  />
+  
+  <div className="absolute bottom-0 right-0">
+    <input
+      type="file"
+      accept="image/*"
+      id="image-upload"
+      onChange={handleImageUpload}
+      className="absolute w-full h-full opacity-0 cursor-pointer"
+    />
+    <div className="p-2 bg-gray-800 text-white rounded-full">
+      <FaCamera />
+    </div>
+  </div>
+</div>
+
+
+
+
+           
+
           </div>
+          <EditProfile/>
 
           {/* Editable Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {Object.entries(formData).map(([key, value]) => (
-              <div key={key}>
-                <label className="block text-gray-700 capitalize mb-1">{key.replace(/([A-Z])/g, ' $1')}</label>
-                <input
-                  type="text"
-                  name={key}
-                  value={value}
-                  onChange={handleChange}
-                  className="w-full border px-3 py-2 rounded-md"
-                />
-              </div>
-            ))}
-          </div>
+         
         </div>
       </main>
     </div>

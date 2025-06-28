@@ -16,10 +16,15 @@ const librarySchema = new mongoose.Schema({
         type:String,
         required: true,
     },
-    ProductUrl: {
+    ProductImage: {
+        url: {
+            type: String,
+            
+        },
+        public_id: {
         type: String,
         
-        
+        }
     }
 })
  const Library = mongoose.model('Library', librarySchema);

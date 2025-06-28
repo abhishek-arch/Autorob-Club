@@ -1,6 +1,6 @@
 const libraryModel = require('../db/Models/library.model');
 
-const createLibrary = async ({ Product , Detail, Available,ProductUrl }) => {
+const createLibrary = async ({ Product , Detail, Available,ProductImage:{url,public_id} }) => {
     if (!Product  || !Available) {
         throw new Error('All fields are required');
     }
@@ -14,7 +14,10 @@ const createLibrary = async ({ Product , Detail, Available,ProductUrl }) => {
         Product,
         Detail,
         Available,
-        ProductUrl
+        ProductImage:{
+            url,
+            public_id
+        }
     });
 
     return library;

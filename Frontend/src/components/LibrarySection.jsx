@@ -7,15 +7,24 @@ import gsap from "gsap";
 import {useGSAP} from '@gsap/react'
 import { useEffect ,useRef} from 'react';
 import { RiRobot3Fill } from "react-icons/ri";
+import axios from 'axios';
+import { ToastContainer, toast } from "react-toastify";
+
+
 
 
 
 const LibrarySection = (props) => {
+  const [ispublished, setIspublished] = useState(false);
 
     const libraryRef = useRef(null);    
     const [boolean, setBoolean] = useState(false)
     const additemRef = useRef(null);
     const [productimg, setProductimg] = useState(null);
+    const [productimgfile, setProductimgfile] = useState(null);
+
+    const token = localStorage.getItem('token');
+    const [imageUpdated, setImageUpdated] = useState(false);
 
 
     const handleAddItems = () => {
@@ -24,22 +33,107 @@ const LibrarySection = (props) => {
     
 
     const handledeleteitems = () => {
+
+      document.querySelector('input[name="Product"]').value =""
+      document.querySelector('input[name="Detail"]').value =""
+    document.querySelector('input[name="Available"]').value =""
+     document.querySelector('input[name="Key"]').value =""
+        setProductimg(null);
+        setImageUpdated(prev => !prev);
+
         setBoolean(false);
     };
     
+useEffect(() => {
+  
+  
+
+  
+}, [imageUpdated]);
 
 
-    const handleImageUpload = (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      // Assuming you want to set the profile image to the uploaded file
-      setProductimg(reader.result);
-    };
-    reader.readAsDataURL(file);
-  }
-};
+const handleImageUpload = async(e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setProductimgfile(file); // Save file for submit
+       
+    
+    setProductimg(URL.createObjectURL(file));
+    setImageUpdated(prev => !prev)
+
+  
+    
+
+  }};
+    
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    setIspublished(true);
+
+const formDataData = new FormData();
+    if (productimgfile) {
+      formDataData.append('image', productimgfile)
+    }
+
+
+
+
+
+
+    formDataData.append('Product', JSON.stringify({
+      Product: document.querySelector('input[name="Product"]').value,
+      Detail: document.querySelector('input[name="Detail"]').value,
+      Available: document.querySelector('input[name="Available"]').value,
+      Adminkey: document.querySelector('input[name="Key"]').value
+    })); // productData is a JS object
+
+   axios.post(
+      `${import.meta.env.VITE_BASE_URL}/library/inventary`,
+      formDataData,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+    ).then((response) => {
+        const data = response.data.library;
+       
+        const imgurl = data.ProductImage.url;
+        
+       
+      
+        
+        setImageUpdated(prev => !prev); 
+         document.querySelector('input[name="Product"]').value =""
+      document.querySelector('input[name="Detail"]').value =""
+    document.querySelector('input[name="Available"]').value =""
+     document.querySelector('input[name="Key"]').value =""
+        setProductimg(null);
+        setProductimgfile(null);
+
+      toast.success("Publish successfully!", {
+             position: "top-right",
+             autoClose: 3000,
+             theme: "dark",
+           });
+        
+      }).catch((err) => {
+       const errorMessage =
+    err.response?.data?.message || "Something went wrong";
+     toast.error(errorMessage, {
+      position: "top-right",
+      autoClose: 3000,
+      theme: "dark",
+    });
+  
+
+      }).finally(() => {
+        setIspublished(false);  
+      })
+        
+      
+      }
 
 
 
@@ -71,7 +165,25 @@ const LibrarySection = (props) => {
  
 
   return (
-    <>
+    
+     <> 
+
+    <ToastContainer
+      
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        />
+
+
+
      <div ref={additemRef} className={`flex justify-between ${props.booleanAdmin? "" : "hidden"} items-center md:h-12 gap-4 relative z-0 border-gray-300  border-b-2 p-2  md:w-full`}>
                 
                 <h1 className='text-3xl font-extrabold'>AUTOROB-INVENTARY</h1>
@@ -87,13 +199,13 @@ const LibrarySection = (props) => {
              <div className='flex justify-end items-center gap-4  border-gray-300  pb-1'>
               
                <button onClick={handledeleteitems} className='w-10 h-11 bg-[#FFFFFF] text-2xl font-bold rounded-md  flex items-center justify-center'><MdDelete /></button>
-               <button className='bg-green-500 rounded-md text-md text-white p-2'>Publish</button>
+               <button onClick={handlesubmit} className='bg-green-500 rounded-md text-md text-white p-2'>{ispublished ? "Publishing..." : "Publish"}</button>
              </div>
              <div className=' mt-2 bg-[#FFFFFF]'>
                   <div className="relative flex justify-center flex-col items-center ">
                  <img
-                   src= { `{productimg}` || 'https://www.svgrepo.com/show/447111/avatar-boy.svg'}
-               alt="Profile"
+                   src= { `${productimg}` || 'https://www.svgrepo.com/show/447111/avatar-boy.svg'}
+               alt="Img"
                    className="w-24 h-24 rounded-full border-2 object-cover mt-4"
                  />
                  <label htmlFor="image-upload" className=" absolute top-20  p-2 bg-gray-800 text-white rounded-full cursor-pointer  ">

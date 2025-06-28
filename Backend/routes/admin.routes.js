@@ -7,7 +7,7 @@ const blacklistToken = require('../Createdb/blaclistdb');
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());
 const authMiddleware = require('../middlewares/auth.middleware')
-const upload = require("../config/multer.config")
+const {upload} = require("../config/multer.config")
 const cloudinary = require('cloudinary').v2;
 const createadmindasboard = require("../Createdb/admindasboard.db")
 const admindashboardModel = require("../db/Models/admin.profile.model")
@@ -76,21 +76,22 @@ router.get("/profile",authMiddleware.authenticateAdmin,async(req,res)=>{
    res.status(200).json({admin})})
 
 router.post('/dashboard',authMiddleware.authenticateAdmin,async(req,res)=>{
-    const {fullname:{firstname,lastname},email,phone,RollNo,Branch,profilephoto,expertise,gender} = req.body;
-    const existingAdmin = await admindashboardModel.findOne({email});
+    const admin = req.admin;
+    
+    const existingAdmin = await admindashboardModel.findOne({email:admin.email});
     if(existingAdmin) {
-      return res.status(400).json({message: "Admin with this email already exists"});
+      return res.json({existingAdmin});
     
     }
   
-  const admindashboard = await createadmindasboard({fullname:{firstname,lastname},
-        email,
-        profilephoto,
-        expertise,
-        phone,
-        gender,
-        RollNo,
-        Branch})
+  const admindashboard = await createadmindasboard({fullname:{firstname:admin.fullname.firstname,lastname:admin.fullname.lastname},
+        email: admin.email,
+        profilephoto:{url:"",public_id:""},
+        expertise:"",
+        phone:"",
+        gender:"",
+        RollNo: admin.RollNo,
+        Branch: admin.Branch})
 
         res.status(201).json({message: "Admindashboard created successfully", admindashboard});
 
@@ -101,6 +102,7 @@ router.post('/dashboard',authMiddleware.authenticateAdmin,async(req,res)=>{
 
  router.post('/upload',authMiddleware.authenticateAdmin,upload.single("image"),async(req,res)=>{
          const admin = await admindashboardModel.findOne({ email: req.admin.email });
+         console.log(admin)
 
      if (admin.profilephoto && admin.profilephoto.public_id) {
         
@@ -151,7 +153,26 @@ const existingAdminprofile = await admindashboardModel.findOne({email});
 
 
 
+router.put('/editprofile',authMiddleware.authenticateAdmin,async(req,res)=>{
+    const {email,phone,RollNo,expertise,gender} = req.body; 
+    
+    const admin = await admindashboardModel.findOne({ email: req.admin.email });
+    if (!admin) {
+        return res.status(404).json({ message: 'Admin profile not found' });
+    }
+    const updatedProfile = await admindashboardModel.findOneAndUpdate(
+        { email: req.admin.email },
+        {
+            expertise,
+            gender,
+            email,
+            phone,
+            RollNo,
+        },
+        { new: true }
+    );
 
-   
+    res.status(200).json({ message: 'Profile updated successfully', updatedProfile });
+});
 
 module.exports = router;

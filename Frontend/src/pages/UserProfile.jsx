@@ -6,6 +6,7 @@ import { MdOutlineDashboard, MdOutlineLibraryBooks, MdInfo } from 'react-icons/m
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import AutoRoblogo from "../assets/images/Autoroblogo.png"
+import EditProfile from '../components/UserProfileEdit'
 
 const ProfileDashboard = () => {
   const [profileImage, setProfileImage] = useState(null);
@@ -27,84 +28,31 @@ const [formData, setFormData] = useState({
 });
 
   
-  useEffect(() => {
-    
-   
-    axios.get(`${import.meta.env.VITE_BASE_URL}/users/profile`,{
-        headers:{
-            Authorization: `Bearer ${token}`
-        },
-         
-    }).then(response=>{
-       const user = response.data.user;
-    setFormData({
-      firstname: user.fullname.firstname,
-      lastname: user.fullname.lastname ,
-      expertise: 'UI/UX Designer',
-      gender: 'Male',
-      email: user.email ,
-      phone: user.phoneNo,   
-      RollNo: user.RollNo ,
-    });
-    setPhoneNo(user.phoneNo)
+ useEffect(() => {
 
-     const profiledata ={
-        fullname:{
-      firstname: user.fullname.firstname,
-      lastname: user.fullname.lastname },
-      expertise: 'UI/UX Designer',
-      gender: 'Male',
-      email: user.email ,
-      phone: phoneNo,
-      RollNo: user.RollNo ,
-      Branch: user.Branch,
-      profilephoto: "profilephoto.jpg"
-    };
-     axios.post(`${import.meta.env.VITE_BASE_URL}/users/dashboard`,profiledata,{
-            headers:{
-            Authorization: `Bearer ${token}`
-          
-    }
+
+
+  axios.get(`${import.meta.env.VITE_BASE_URL}/users/dashboard`,{
+          headers:{
+              Authorization: `Bearer ${token}`
+          },
+           
+      }).then(response=>{
+         const user = response.data.existingUserprofile || response.data.userdashboard;
+         const profilephoto = user.profilephoto?.url || "";
+         setProfileImage(profilephoto);
+         setFormData({
+           firstname: user.fullname?.firstname || "",
+           lastname: user.fullname?.lastname || "",
+         })
         
-    })
-
-       axios.get(`${import.meta.env.VITE_BASE_URL}/users/dashboard`,{ 
-        headers:{
-            Authorization: `Bearer ${token}`
-          
-    }}).then(response=>{
-        const user = response.data.existingUserprofile;
-        const profilephoto =user.profilephoto.url
-        setProfileImage(profilephoto)
-
-    })
-
-     
         
-    })
-    .catch(err=>{
-        console.log(err)
-        localStorage.removeItem('token')
-        navigate('/Autorob-Club/userlogin')
-    })
-
-
- 
-       
-         
-    
-    
-  
-        
-   
-    
+//         
+})
 
 
 
-    
-  
-    
-  }, [imageUpdated])
+}, [imageUpdated])
   
    
     
@@ -169,7 +117,7 @@ const [formData, setFormData] = useState({
           <div className="mb-4 flex items-center space-x-2 text-blue-600 font-semibold">
             <MdOutlineDashboard /> <span>Dashboard</span>
           </div>
-          {/* <div className="text-sm text-gray-600 ml-6 mb-2">Student About</div> */}
+         
         
         </nav>
       </aside>
@@ -182,7 +130,7 @@ const [formData, setFormData] = useState({
           <div className="flex items-center space-x-4">
             <FiBell className="text-xl" />
             <FiUser className="text-xl" />
-            <span className="font-medium">Bonnyra Jon</span>
+            <span className="font-medium"></span>
           </div>
         </div>
 
@@ -211,21 +159,8 @@ const [formData, setFormData] = useState({
             </div>
           </div>
 
-          {/* Editable Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {Object.entries(formData).map(([key, value]) => (
-              <div key={key}>
-                <label className="block text-gray-700 capitalize mb-1">{key.replace(/([A-Z])/g, ' $1')}</label>
-                <input
-                  type="text"
-                  name={key}
-                  value={value}
-                  onChange={handleChange}
-                  className="w-full border px-3 py-2 rounded-md"
-                />
-              </div>
-            ))}
-          </div>
+          <EditProfile/>
+         
         </div>
       </main>
     </div>

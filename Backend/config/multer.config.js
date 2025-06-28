@@ -14,4 +14,15 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage });
 
-module.exports = upload;
+
+const inventaryStorage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'AutorobInventary',
+    allowed_formats: ['jpg', 'png', 'jpeg', 'webp'],
+    transformation: [{ width: 500, height: 500, crop: 'limit' }]
+  },
+});
+const inventaryUpload = multer({ storage: inventaryStorage });
+
+module.exports = {upload, inventaryUpload};
