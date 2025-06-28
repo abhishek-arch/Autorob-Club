@@ -14,17 +14,17 @@ const navbar = ({isopen , setisopen}) => {
   } ;
   const navigate = useNavigate()
   
-  const handleClick = () => {
+  const handleClicklogout = () => {
   
-    axios.post(`${import.meta.env.VITE_BASE_URL}/admins/logout`,{}, {
+    axios.post(`${import.meta.env.VITE_BASE_URL}/users/logout`,{}, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     })
     .then((response) => {
         localStorage.removeItem('token')
-    
-      navigate('/Autorob-Club/adminlogin')
+     console.log('Logout successful:', response.data);
+      navigate('/Autorob-Club/userlogin')
     })
     .catch((error) => {
       console.error('Error during logout:', error);
@@ -46,9 +46,9 @@ const navbar = ({isopen , setisopen}) => {
 
 
 
-         <li><Link to="/Autorob-Club/admin-profile" className="hover:text-blue-400 inline-block hover:scale-125">Dashboard</Link></li>
+         <li><Link to="/Autorob-Club/user-profile" className="hover:text-blue-400 inline-block hover:scale-125">Dashboard</Link></li>
 
-        <li><Link  onClick={handleClick} className="hover:text-blue-400 inline-block hover:scale-125">Logout</Link></li>
+        <li><Link  onClick={handleClicklogout} className="hover:text-blue-400 inline-block hover:scale-125">Logout</Link></li>
 
         
           

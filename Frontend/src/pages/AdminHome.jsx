@@ -11,7 +11,8 @@ import Spline from "../components/Spline";
 import ClubActivities from "../components/ClubActivities";
 import MemberSection from "../components/Members";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
     
@@ -23,7 +24,26 @@ export default function AutoRobClub() {
   const mouseclick = () => {
     setisopen(!isopen);
   };
+ const navigate = useNavigate()
 
+ const token = localStorage.getItem('token')
+
+  const handleClicklogout = () => {
+    
+    axios.post(`${import.meta.env.VITE_BASE_URL}/admins/logout`, {},{
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then((response) => {
+      localStorage.removeItem('token')
+     console.log('Logout successful:', response.data);
+      navigate('/Autorob-Club/adminlogin')
+    })
+    .catch((error) => {
+      console.error('Error during logout:', error);
+    });
+  }
   
 
   return (
@@ -37,12 +57,12 @@ export default function AutoRobClub() {
         <ul className="flex  justify-end gap-10 p-2 items-center flex-col text-white cursor-pointer text-lg font-semibold">
           <div className="home_cross flex">
             <li className="">
-              <a
-                href="#"
+              <Link
+               
                 className="hover:text-blue-400 inline-block  hover:scale-125"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <img
               className="invert fixed right-0 cursor-pointer"
@@ -71,7 +91,8 @@ export default function AutoRobClub() {
           </li>
           <li>
             <Link
-              to="/Autorob-Club/adminlogin"
+              
+              onClick={handleClicklogout }
               
               className="hover:text-blue-400 inline-block hover:scale-125"
             >

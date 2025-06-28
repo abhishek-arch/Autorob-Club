@@ -37,7 +37,7 @@ router.post('/register', async (req, res) => {
 
 router.post("/login", async (req, res) => {
     const { email, password } = await req.body;
-    console.log(email,password)
+   
   
     if (!email || !password) {
         return res.status(400).json({ message: "email and password is compulsory" });
@@ -59,7 +59,9 @@ router.post("/login", async (req, res) => {
 
 });
 router.post("/logout",authMiddleware.authenticateAdmin, async(req, res) => {
+
     const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
+   
     if (!token) {
         return res.status(401).json({ message: "Unauthorized" });
     }

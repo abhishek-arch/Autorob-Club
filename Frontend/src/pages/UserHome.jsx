@@ -1,5 +1,5 @@
 
-import Navbar from "../components/Navbar";
+import Navbar from "../components/UserHomeNavbar";
 import Header from "../components/Header";
 
 
@@ -12,6 +12,7 @@ import ClubActivities from "../components/ClubActivities";
 import MemberSection from "../components/Members";
 import Footer from "../components/Footer";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
     
@@ -25,6 +26,25 @@ export default function AutoRobClub() {
   };
 
   const navigate = useNavigate();
+  const token = localStorage.getItem('token')
+  
+    const handleClick = () => {
+      
+      axios.post(`${import.meta.env.VITE_BASE_URL}/users/logout`, {},{
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then((response) => {
+        localStorage.removeItem('token')
+       ;
+        navigate('/Autorob-Club/userlogin')
+      })
+      .catch((error) => {
+        console.error('Error during logout:', error);
+      });
+    }
+    
 
   
   
@@ -75,7 +95,7 @@ export default function AutoRobClub() {
           </li>
           <li>
             <Link
-              to="/Autorob-Club/userlogin"
+              onClick={handleClick}
               
               className="hover:text-blue-400 inline-block hover:scale-125"
             >

@@ -21,8 +21,14 @@ const Adminlogin = () => {
     const admindata = {
       email: email,
       password: password,
+
+
     };
- try {
+
+      
+
+
+        try {
     const response = await axios.post(
       `${import.meta.env.VITE_BASE_URL}/admins/login`,
       admindata
@@ -54,6 +60,11 @@ const Adminlogin = () => {
     } finally {
       setLoading(false); // ✅ always executed
     }
+
+ 
+
+
+ 
 
 } 
 
