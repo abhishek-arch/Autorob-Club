@@ -14,7 +14,7 @@ function MemberSection() {
         team: "Final Year",
         members: [
           { name: "Pragya", src:"", role: "President" },
-          { name: "Namo", role: "Vice President" },
+        
           { name: "Namo",src:"",  role: "Vice President" },
           { name: "Namo",src:"",  role: "Vice President" },
           { name: "Namo",src:"",  role: "Vice President" },
@@ -39,7 +39,7 @@ function MemberSection() {
       {
         team: "Second Year",
         members: [
-          { name: "Abhishek",src:"",  role: "Hardware" },
+          { name: "Abhishek",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751139733/admin-profiles/vcmckprvqvae2j5gdvgb.jpg",  role: "Hardware" },
           { name: "Nishant",src:"",  role: "Hardware" },
           { name: "Vanshika",src:"",  role: "Hardware" },
           { name: "Nishtha",src:"",  role: "Head" },
@@ -91,16 +91,16 @@ function MemberSection() {
               </h2>
             </div>
             {inView ? (
-              <div className="member grid md:grid-cols-6  px-[5px] mr-8">
+              <div className="member grid md:grid-cols-6 md:w-fit px-[5px] mr-8 md:gap-4 gap-2 justify-items-center">
                 {teamObj.members.map((member, idx) => (
                   <div className="mb-[10px]">
                     <Card
                       key={idx}
-                      className=" p-0 member_card m-0   w-[6rem] h-[6rem] rounded-full bg-gray-800 shadow-lg hover:shadow-blue-400 transition duration-300 mb-4"
+                      className=" p-0 member_card m-0    rounded-full shadow-lg hover:shadow-blue-400 transition duration-300 mb-4"
                     >
                        <img
                        
-                          className="w-full h-full  rounded-full object-cover"
+                          className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover"
                           srcSet={member.src}
                           alt=""
                         />
