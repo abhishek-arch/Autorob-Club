@@ -7,7 +7,7 @@ const blacklistToken = require('../Createdb/blaclistdb');
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());
 const authMiddleware = require('../middlewares/auth.middleware')
-const {upload} = require("../config/multer.config")
+const {adminprofiles} = require("../config/multer.config")
 const cloudinary = require('cloudinary').v2;
 const createadmindasboard = require("../Createdb/admindasboard.db")
 const admindashboardModel = require("../db/Models/admin.profile.model")
@@ -23,7 +23,7 @@ router.post('/register', async (req, res) => {
         return res.status(400).json({ message: 'All fields are required' });
     }
      if (AdminKey !== process.env.ADMIN_SECRET_CODE) {
-    return res.status(403).json({ message: 'Invalid admin registration code' });
+    return res.status(403).json({ message: 'Invalid admin AdminKey' });
   }
 
     
@@ -100,9 +100,9 @@ router.post('/dashboard',authMiddleware.authenticateAdmin,async(req,res)=>{
 
  )
 
- router.post('/upload',authMiddleware.authenticateAdmin,upload.single("image"),async(req,res)=>{
+ router.post('/upload',authMiddleware.authenticateAdmin,adminprofiles.single("image"),async(req,res)=>{
          const admin = await admindashboardModel.findOne({ email: req.admin.email });
-         console.log(admin)
+        
 
      if (admin.profilephoto && admin.profilephoto.public_id) {
         

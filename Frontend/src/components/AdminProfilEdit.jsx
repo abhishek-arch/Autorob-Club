@@ -25,7 +25,7 @@ const ProfileEdit = () => {
         },
       }).then((response) => {
         const admin = response.data.existingAdmin || response.data.admindashboard;
-        console.log(admin);
+        
         const profilephoto = admin.profilephoto?.url||"";
         setProfileImage(profilephoto);
         setFormData({

@@ -25,7 +25,7 @@ const ProfileEdit = () => {
         },
       }).then((response) => {
         const user = response.data.existinguser || response.data.userdashboard;
-        console.log(user);
+        
         const profilephoto = user.profilephoto?.url||"";
         setProfileImage(profilephoto);
         setFormData({
