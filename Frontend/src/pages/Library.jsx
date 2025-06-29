@@ -70,7 +70,7 @@ const Library = () => {
   return (
     <>
       <div className=' border-2 w-full '>
-        <div className='flex bg-slate-500 items-center'>
+        <div className='flex bg-slate-500  items-center'>
             <img className='w-32 mb-2 invert' src={AutoRoblogo} alt=""  />
 
         <h1 className='text-3xl text-gray-300 pb-3'> Available Inventery</h1>
@@ -78,12 +78,12 @@ const Library = () => {
        
             {inventary.map((obj,index)=>{
                 return(
-                    <div key={index} className='flex gap-2 mb-2'>
+                    <div key={index} className='flex gap-2 mb-2 '>
                         <div className='  overflow-hidden '>
             <img className='w-24 h-24 object-cover rounded-full border-2' srcSet={obj.ProductImage.url} alt="" />
             
         </div>
-            <div className='w-[75vw]  flex flex-col px-2 box-border'>
+            <div className='w-[75vw] md:w-full flex flex-col px-2 box-border'>
                 <div className='overflow-hidden'>
                      <h2 className='text-xl font-medium'>{obj.Product}</h2>
                      <span>{obj.Detail}
@@ -106,7 +106,10 @@ const Library = () => {
                 </div>
 
                 </div>
-                <button className='bg-green-500 text-lg font-medium rounded-md mb-1'>Borrow</button>
+                <div className='flex justify-center items-center gap-2'>
+                <button className='bg-green-500 text-lg font-medium rounded-md mb-1 md:w-48'>Borrow</button>
+
+                </div>
             </div>
 
                     </div>
