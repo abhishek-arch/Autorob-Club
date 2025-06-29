@@ -179,7 +179,7 @@ const handleUpdate = (id) => {
         placeholder="Admin key"
       />
       <div className="flex justify-end gap-2">
-        <button onClick={() => setShowPrompt(false)} className="px-4 py-2 bg-gray-300 rounded">Cancel</button>
+        <button onClick={() => { setShowPrompt(false); setReload((prev)=>!prev); }} className="px-4 py-2 bg-gray-300 rounded">Cancel</button>
         <button onClick={handleSubmit} className="px-4 py-2 bg-blue-600 text-white rounded">{isSubmit?"Submitting...":"Submit"}</button>
       </div>
     </div>
