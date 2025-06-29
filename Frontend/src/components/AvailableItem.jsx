@@ -41,7 +41,7 @@ const[isSubmit, setIsSubmit] = useState(false);
       console.error("Error fetching inventory:", err);
       setLoading(false); 
     });
-  }, [reload]); 
+  }, []); 
 
   const handleChange = (id, type) => {
   setQuantities((prev) => {
