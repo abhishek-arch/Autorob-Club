@@ -170,7 +170,7 @@ const formDataData = new FormData();
  useGSAP(function() {
     if(isopen){
         gsap.to(additemRef.current, { display:"none", duration: 0 });
-         gsap.to(availableRef.current, { display:"", top:"250px" ,duration: 0.5});
+         gsap.to(availableRef.current, { display:"", top:"0px" ,duration: 0.5});
  
 
     }
@@ -192,7 +192,7 @@ const formDataData = new FormData();
     else{
         gsap.to(additemRef.current, { display:"none", duration: 0 });
         gsap.to(libraryRef.current, { display:"none", top:"-150px" ,duration: 0});
-        gsap.to(availableRef.current, { display:"none", top:"100px" ,duration: 0});
+        gsap.to(availableRef.current, { display:"none", top:"0px" ,duration: 0});
         setIsopen(false);
         setBoolean(false);
        
@@ -224,7 +224,7 @@ const formDataData = new FormData();
 
 
 
-     <div ref={additemRef} className={`  ${props.booleanAdmin? "" : "hidden"}  md:h-12 gap-4 relative z-0 border-gray-300  border-b-2 p-2  md:w-full`}>
+     <div ref={additemRef} className={`  ${props.booleanAdmin? "" : "hidden"}  md:h-12 gap-4 relative z-0 border-gray-300   p-2  md:w-full`}>
                 <div  className='flex justify-between items-center mb-5'>
                  <h1 className='text-base font-medium text-gray-600'>AUTOROB-INVENTARY</h1>
               
@@ -232,15 +232,18 @@ const formDataData = new FormData();
                 </div>
                
 
-   <div className={`flex justify-between items-center  `}>
-              <h1 className='text-base font-medium text-gray-600'>Available-Items</h1>
+   <div className={`flex justify-between items-center  pb-1`}>
+              <h2 className='text-2xl font-normal text-gray-600'>Available-Items</h2>
                <button onClick={handleshowlibrary} className='bg-orange-500 rounded-full w-28 text-md text-white p-2'>View</button>
              </div>
              </div>
 
     
-          
+    <div className={`relative md:w-full ${(props.booleanAdmin && isopen) ? "block" : "hidden"} z-10`}>
+     
     <AvailableItems isopen={isopen} boolean={boolean} availableRef={availableRef} setIsopen={setIsopen}/>
+    </div>
+     
             
 
 

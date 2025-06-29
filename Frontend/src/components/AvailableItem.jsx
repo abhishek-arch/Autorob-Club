@@ -113,7 +113,7 @@ const handleUpdate = (id) => {
         theme="light"
       />
   
-    <div ref={props.availableRef} className="border-2 w-full absolute bg-white p-4">
+    <div ref={props.availableRef} className="border-2 w-full absolute bg-white p-4 md:w-full  ">
         <div className='flex justify-center'><h3 onClick={() => props.setIsopen(false)} className="text-3xl font-medium cursor-pointer"><i className="ri-arrow-down-wide-line"></i></h3></div>
         <div className='flex bg-slate-500 justify-center items-center'>
            
