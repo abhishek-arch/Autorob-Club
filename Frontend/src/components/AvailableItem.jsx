@@ -11,7 +11,7 @@ const AvailableItems = (props) => {
   const [showPrompt, setShowPrompt] = useState(false);
 const [inputValue, setInputValue] = useState('');
 const [selectedItemId, setSelectedItemId] = useState(null);
-const [reload, setReload] = useState(0);
+const [reload, setReload] = useState(false);
 const[isSubmit, setIsSubmit] = useState(false);
 
 
