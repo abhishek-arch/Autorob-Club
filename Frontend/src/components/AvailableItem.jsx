@@ -59,7 +59,7 @@ const handleUpdate = (id) => {
     setShowPrompt(true)}
 
   const handleSubmit = (id) => {
-    setReload((prev) => !prev); 
+   
     setIsSubmit(true);
     const updatedQty = quantities[selectedItemId]
     setUpdatingId(id); 
@@ -74,6 +74,7 @@ const handleUpdate = (id) => {
       }
     }).then(() => {
          setShowPrompt(false)
+          setReload((prev) => !prev)
        toast.success("updated Successfully!", {
                 position: "top-right",
                 autoClose: 3000,
