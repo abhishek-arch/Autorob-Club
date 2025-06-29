@@ -123,7 +123,7 @@ useEffect(() => {
       {/* Sidebar */}
       <aside className="w-full md:w-64 bg-white p-4 md:p-6 shadow-md">
         <div className='flex items-center justify-between'>
-            <div>
+            <div onClick={() => navigate('/Autorob-Club/admin-home')} className='cursor-pointer'>
        <img className='w-32 mb-2 invert' src={AutoRoblogo} alt="" srcset="" />
 
             </div>
@@ -151,7 +151,7 @@ useEffect(() => {
             <MdOutlineDashboard /> <span>Dashboard</span>
           </div>
           {/* <div className="text-sm text-gray-600 ml-6 mb-2">Student About</div> */}
-          <div onClick={handlelibrary} className={`text-sm  ml-6 mb-2 flex items-center ${boolean ? "text-blue-600" :"text-gray-600"} space-x-2`}>
+          <div onClick={handlelibrary} className={`text-sm  ml-6 mb-2 flex items-center ${boolean ? "text-blue-600" :"text-gray-600"} space-x-2 cursor-pointer`}>
             <MdOutlineLibraryBooks /> <span>Library</span>
           </div>
           <div className="text-sm text-gray-600 ml-6 flex items-center space-x-2">

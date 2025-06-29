@@ -58,6 +58,34 @@ router.post('/inventary', authMiddleware.authenticateAdmin,inventaryUpload.singl
 });
 
 
+router.post('/update', async (req, res) => {
+  const { id, updatedQuantity , Adminkey } = req.body;
+
+   if (Adminkey !== process.env.ADMIN_SECRET_Inventory ) {
+        return res.status(403).json({ message: 'Invalid admin key' });
+    }
+
+  if (!id || updatedQuantity === undefined) {
+    return res.status(400).json({ message: "Missing required fields" });
+  }
+
+  try {
+    const item = await libraryModel.findById(id);
+
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+
+    item.Available = updatedQuantity;
+    await item.save();
+
+    res.status(200).json({ message: "Quantity updated successfully", item });
+  } catch (error) {
+    console.error("Update failed:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 
 
 

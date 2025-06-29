@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
         RollNo:{
             type: String,
             required: true,
-            unique: true,
+          
             
         },
     Branch: {

@@ -69,6 +69,7 @@
     100% { left: 0%; }
 } 
 
+
 .member_card {
   display: flex;
   gap: 10px;
@@ -79,26 +80,47 @@
   /* border-radius: 100%; */
 }
 
+@media screen and (min-width: 768px){
+  .member{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 42px;
+    animation:move  3s linear infinite;
+
+  }
+   @keyframes move {
+   0% {
+    transform: translateX(42%);
+    }
+    50% {
+      transform: translateX(45%);
+    }
+    100%{
+      transform: translateX(42%);
+    }
+} }
+
+
 @media screen and (max-width: 768px){
   .member{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 6px;
+    gap: 8px;
     animation:move  10s linear infinite;
 
   }
-  @keyframes move {
+   @keyframes move {
    0% {
-    transform: translateX(-120%);
+    transform: translateX(-110%);
     }
     50% {
-      transform: translateX(30%);
+      transform: translateX(15%);
     }
     100%{
-      transform: translateX(-120%);
+      transform: translateX(-110%);
     }
 } 
-  
+   
 .card{
   background-color: rgba(120, 121, 106, 0.17);
 /* backdrop-filter: blur(); */

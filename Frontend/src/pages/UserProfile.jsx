@@ -90,7 +90,7 @@ const [formData, setFormData] = useState({
       {/* Sidebar */}
       <aside className="w-full md:w-64 bg-white p-4 md:p-6 shadow-md">
         <div className='flex items-center justify-between'>
-            <div>
+            <div onClick={() => navigate('/Autorob-Club/user-home')} className='cursor-pointer'>
        <img className='w-32 mb-2 invert' src={AutoRoblogo} alt="" srcset="" />
 
             </div>
