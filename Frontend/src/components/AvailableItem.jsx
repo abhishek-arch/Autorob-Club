@@ -74,7 +74,7 @@ const handleUpdate = (id) => {
       }
     }).then(() => {
          setShowPrompt(false)
-          setReload((prev) => !prev)
+          
        toast.success("updated Successfully!", {
                 position: "top-right",
                 autoClose: 3000,
@@ -92,6 +92,7 @@ const handleUpdate = (id) => {
                 theme: "dark",
       
     })}).finally(() => {
+        setReload((prev) => !prev)
         setIsSubmit(false);
       setUpdatingId(null); // ✅ reset loading
     });
