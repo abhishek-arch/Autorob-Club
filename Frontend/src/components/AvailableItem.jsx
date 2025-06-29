@@ -12,6 +12,7 @@ const AvailableItems = (props) => {
 const [inputValue, setInputValue] = useState('');
 const [selectedItemId, setSelectedItemId] = useState(null);
 const [reload, setReload] = useState(0);
+const[isSubmit, setIsSubmit] = useState(false);
 
 
   const token = localStorage.getItem('token');
@@ -59,6 +60,7 @@ const handleUpdate = (id) => {
 
   const handleSubmit = (id) => {
     setReload((prev) => !prev); 
+    setIsSubmit(true);
     const updatedQty = quantities[selectedItemId]
     setUpdatingId(id); 
 
@@ -89,6 +91,7 @@ const handleUpdate = (id) => {
                 theme: "dark",
       
     })}).finally(() => {
+        setIsSubmit(false);
       setUpdatingId(null); // ✅ reset loading
     });
   };
@@ -175,7 +178,7 @@ const handleUpdate = (id) => {
       />
       <div className="flex justify-end gap-2">
         <button onClick={() => setShowPrompt(false)} className="px-4 py-2 bg-gray-300 rounded">Cancel</button>
-        <button onClick={handleSubmit} className="px-4 py-2 bg-blue-600 text-white rounded">Submit</button>
+        <button onClick={handleSubmit} className="px-4 py-2 bg-blue-600 text-white rounded">{isSubmit?"Submitting...":"Submit"}</button>
       </div>
     </div>
   </div>
