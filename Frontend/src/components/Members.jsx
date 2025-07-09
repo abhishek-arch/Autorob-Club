@@ -16,7 +16,7 @@ function MemberSection() {
           { name: "Pragya", src:"", role: "President" },
         
           { name: "Namo",src:"",  role: "Vice President" },
-          { name: "Namo",src:"",  role: "Vice President" },
+          { name: "Uday",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752086451/admin-profiles/sluaovm6dzku1wefe7fq.jpg",  role: "Vice President" },
           { name: "Namo",src:"",  role: "Vice President" },
           { name: "Namo",src:"",  role: "Vice President" },
         ],
