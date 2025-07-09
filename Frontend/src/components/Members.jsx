@@ -45,7 +45,7 @@ function MemberSection() {
           { name: "Nishtha",src:"",  role: "Head" },
           { name: "Bhoomi",src:"",  role: "Head" },
           { name: "Swati",src:"",  role: "Software" },
-          { name: "Kartik",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044023/user-profiles/ywajcf8oy7z25spptp8s.jpg",  role: "Head" },
+          { name: "Kartikey",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044023/user-profiles/ywajcf8oy7z25spptp8s.jpg",  role: "Head" },
           { name: "Priyanshu",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751737630/admin-profiles/wfuqzxkqibsvtgnvyvkg.jpg",  role: "Head" },
           { name: "Pushkin",src:"",  role: "Head" },
           { name: "Asheesh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751768085/admin-profiles/ejiitqqvqpvgp6wusdfx.jpg",  role: "Head" },
