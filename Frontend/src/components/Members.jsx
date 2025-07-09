@@ -40,7 +40,7 @@ function MemberSection() {
         team: "Second Year",
         members: [
           { name: "Abhishek",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751139733/admin-profiles/vcmckprvqvae2j5gdvgb.jpg",  role: "Hardware" },
-          { name: "Nishant",src:"",  role: "Session-Coordinator" },
+          { name: "Nishant",src:"",  role: "Hardware" },
           { name: "Vanshika",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752047649/admin-profiles/bm07eiwdhoakpmhkyjbh.jpg",  role: "Hardware" },
           { name: "Nishtha",src:"",  role: "Head" },
           { name: "Bhoomi",src:"",  role: "Head" },
@@ -106,7 +106,7 @@ function MemberSection() {
                         />
                      
                     </Card>
-                     <CardContent className="cardcontent text-center ">
+                     <CardContent className="cardcontent text-center  ">
                         {/* <FaUser size={50} className="text-blue-400 mx-auto" />  */}
                        
 
