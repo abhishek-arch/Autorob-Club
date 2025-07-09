@@ -41,7 +41,7 @@ function MemberSection() {
         members: [
           { name: "Abhishek",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751139733/admin-profiles/vcmckprvqvae2j5gdvgb.jpg",  role: "Hardware" },
           { name: "Nishant",src:"",  role: "Session-Coordinator" },
-          { name: "Vanshika",src:"",  role: "Hardware" },
+          { name: "Vanshika",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752047649/admin-profiles/bm07eiwdhoakpmhkyjbh.jpg",  role: "Hardware" },
           { name: "Nishtha",src:"",  role: "Head" },
           { name: "Bhoomi",src:"",  role: "Head" },
           { name: "Swati",src:"",  role: "Software" },
