@@ -103,21 +103,22 @@
 
 @media screen and (max-width: 768px){
   .member{
+    width: max-content;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
+    gap: 4px;
     animation:move  10s linear infinite;
 
   }
    @keyframes move {
    0% {
-    transform: translateX(-110%);
+    transform: translateX(-50%);
     }
     50% {
       transform: translateX(15%);
     }
     100%{
-      transform: translateX(-110%);
+      transform: translateX(-50%);
     }
 } 
    
