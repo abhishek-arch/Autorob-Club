@@ -55,7 +55,7 @@ function MemberSection() {
           { name: "Rahul",src:"",  role: "Head" },
           { name: "Aryan",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751739334/admin-profiles/avpajgvsgoq9qybaj0k5.jpg",  role: "Head" },
           { name: "Vaibhav",src:"",  role: "Head" },
-          { name: "Ashwani",src:"",  role: "Head" },
+          { name: "Shivam",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752043668/admin-profiles/rjpihvh9kjqeljmsoyp8.jpg",  role: "Head" },
           { name: "Isha",src:"",  role: "Head" },
         ],
       },
