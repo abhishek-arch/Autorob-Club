@@ -52,7 +52,7 @@ function MemberSection() {
           { name: "Harsh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751736781/admin-profiles/ozwsdf5c51gckdhudo61.webp",  role: "Head" },
           { name: "Yuvraj",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751784776/admin-profiles/nhdcncuivdtj7zif9gfv.jpg",  role: "Head" },
           { name: "Aditya",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752045362/admin-profiles/eoc93hiospu773n2i0uw.jpg",  role: "Event&PR" },
-          { name: "Rahul",src:"",  role: "Software" },
+          { name: "Mayank",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752051444/admin-profiles/wcesfuzebnvdaoficppq.jpg",  role: "Software" },
           { name: "Aryan",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751739334/admin-profiles/avpajgvsgoq9qybaj0k5.jpg",  role: "Head" },
           { name: "Vaibhav",src:"",  role: "Head" },
           { name: "Shivam",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752043668/admin-profiles/rjpihvh9kjqeljmsoyp8.jpg",  role: "Head" },
