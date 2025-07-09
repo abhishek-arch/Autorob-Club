@@ -151,10 +151,10 @@ const AdminSignup = () => {
 
             <input
               required
-              className="border bg-[#eeeeee]  px-4 py-2 mr-2 rounded mb-7 w-1/2 text-lg placeholder:text-base"
+              className="border bg-[#eeeeee]  px-3 py-2 mr-2 rounded mb-7 w-1/2 text-lg placeholder:text-sm placeholder:p-0"
               type="text"
               name="AdminKey"
-              placeholder="Admin Key"
+              placeholder="Admin-Key"
               value={AdminKey}
               onChange={(e) => {
                 setAdminKey(e.target.value);
@@ -166,7 +166,7 @@ const AdminSignup = () => {
 
           <input
             required
-            className="border bg-[#eeeeee]  px-4 py-2 rounded mb-7 w-full text-lg placeholder:text-base"
+            className="border bg-[#eeeeee]  px-4 py-2 rounded mb-7 w-full text-lg placeholder:text-based "
             type="email"
             name="email"
             placeholder="email@example.com"
