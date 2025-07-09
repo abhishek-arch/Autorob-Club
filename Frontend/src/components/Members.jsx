@@ -57,6 +57,7 @@ function MemberSection() {
           { name: "Vipranshu",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752053286/admin-profiles/ugpkc2t4o7equynlsgy0.jpg",  role: "Head" },
           { name: "Shivam",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752043668/admin-profiles/rjpihvh9kjqeljmsoyp8.jpg",  role: "Head" },
           { name: "Pranjul",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752053036/admin-profiles/uhjebezknbaekw11gcqe.jpg",  role: "Head" },
+          { name: "Kush",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752059201/admin-profiles/awdty7mn7jca8ak8fcbo.webp",  role: "Design" },
         ],
       },
     ],
