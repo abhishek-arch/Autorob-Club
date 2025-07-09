@@ -45,7 +45,7 @@ const navbar = ({isopen , setisopen}) => {
         <li><a href="#" className="hover:text-blue-400 inline-block hover:scale-125">Home</a></li>
         <li><Link onClick={handlelibrary} className="hover:text-blue-400 inline-block  hover:scale-125">Library</Link></li>
        
-        <li><Link to="/Autorob-Club/usersignup" className="hover:text-blue-400 inline-block hover:scale-125">Sign In</Link></li>
+        <li><Link to="/Autorob-Club/signupoptions" className="hover:text-blue-400 inline-block hover:scale-125">Sign In</Link></li>
         <li><Link to="/Autorob-Club/userlogin" className="hover:text-blue-400 inline-block hover:scale-125">Login</Link></li>
         </ul> 
         <div  className="hamburger border-2 mr-4 " ><img  className='invert' src={hamburger} alt="" onClick={mouseclick}   /></div>

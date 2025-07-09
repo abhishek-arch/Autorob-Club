@@ -12,7 +12,7 @@ import AdminHome from './pages/AdminHome'
 import UserProfile from './pages/UserProfile'
 import AdminProfile from './pages/AdminProfile'
 import Library from './pages/Library'
-
+import SignupOptions from './pages/SignupOptions'
 
 const App = () => {
   return (
@@ -24,6 +24,7 @@ const App = () => {
         <Route path='/Autorob-Club/usersignup' element={<UserSignup />} />
         <Route path='/Autorob-Club/adminsignup' element={<AdminSignup />} />
         <Route path='/Autorob-Club/adminlogin' element={<AdminLogin />} />
+        <Route path='/Autorob-Club/signupoptions' element={<SignupOptions />} />
         <Route path='/Autorob-Club/user-home' element={<UserProtectWrapper>
                <UserHome/>
             </UserProtectWrapper>} />
