@@ -102,7 +102,7 @@ export default function AutoRobClub() {
           </li>
           <li>
             <Link
-              to="/Autorob-Club/UserSignup"
+              to="/Autorob-Club/signupoptions"
               
               className="hover:text-blue-400 inline-block hover:scale-125"
             >

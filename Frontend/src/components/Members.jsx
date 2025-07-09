@@ -26,7 +26,7 @@ function MemberSection() {
         members: [
           { name: "Arnav",src:"",  role: "Head" },
           { name: "Ayush",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751467611/user-profiles/icpql5nzfm1nzriearvq.jpg",  role: "Head" },
-          { name: "Akshat",src:"",  role: "Head" },
+          { name: "Akshat",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044841/user-profiles/uaymjnueek15xur4lozw.jpg",  role: "Head" },
           { name: "Rishabh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751533369/admin-profiles/clhrxfh4hu29pboelxuz.jpg",  role: "Head" },
           { name: "Shaivi",src:"",  role: "Head" },
           { name: "Deepak",src:"",  role: "Head" },
@@ -51,7 +51,7 @@ function MemberSection() {
           { name: "Asheesh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751768085/admin-profiles/ejiitqqvqpvgp6wusdfx.jpg",  role: "Head" },
           { name: "Harsh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751736781/admin-profiles/ozwsdf5c51gckdhudo61.webp",  role: "Head" },
           { name: "Yuvraj",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751784776/admin-profiles/nhdcncuivdtj7zif9gfv.jpg",  role: "Head" },
-          { name: "Vipranshu",src:"",  role: "Head" },
+          { name: "Aditya",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752045362/admin-profiles/eoc93hiospu773n2i0uw.jpg",  role: "Head" },
           { name: "Rahul",src:"",  role: "Head" },
           { name: "Aryan",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751739334/admin-profiles/avpajgvsgoq9qybaj0k5.jpg",  role: "Head" },
           { name: "Vaibhav",src:"",  role: "Head" },
