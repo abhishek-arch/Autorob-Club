@@ -65,11 +65,13 @@ useEffect(() => {
 
 }, [imageUpdated])
   
-   
+   const handledashboard=()=>{
+    setBoolean(false)
+   }
     
 
  const handlelibrary = () => {
-  setBoolean(prev => !prev);
+  setBoolean(true);
   
 
  }
@@ -147,7 +149,7 @@ useEffect(() => {
         </div>
 
         <nav>
-          <div className="mb-4 flex items-center space-x-2 text-blue-600 font-semibold">
+          <div onClick={handledashboard} className={`mb-4 flex items-center space-x-2 text-blue-600 font-semibold cursor-pointer ${boolean ?"text-gray-600"  :"text-blue-600"}`}>
             <MdOutlineDashboard /> <span>Dashboard</span>
           </div>
           {/* <div className="text-sm text-gray-600 ml-6 mb-2">Student About</div> */}
