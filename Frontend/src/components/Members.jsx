@@ -40,7 +40,7 @@ function MemberSection() {
         team: "Second Year",
         members: [
           { name: "Abhishek",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751139733/admin-profiles/vcmckprvqvae2j5gdvgb.jpg",  role: "Hardware" },
-          { name: "Nishant",src:"",  role: "Hardware" },
+          { name: "Nishant",src:"",  role: "Session cood." },
           { name: "Vanshika",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752047649/admin-profiles/bm07eiwdhoakpmhkyjbh.jpg",  role: "Hardware" },
           { name: "Nishtha",src:"",  role: "Head" },
           { name: "Bhoomi",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752048738/admin-profiles/kkgnkn2abioqp53b3jrd.jpg",  role: "Head" },
