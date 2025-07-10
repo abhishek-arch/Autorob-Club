@@ -31,9 +31,7 @@ function MemberSection() {
           { name: "Ashutosh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752135737/admin-profiles/eohrilmmn85xeyukb4nw.jpg",  role: "Head" },
           { name: "Shaivi",src:"",  role: "Head" },
           { name: "Deepak",src:"",  role: "Head" },
-          { name: "Rishabh",src:"",  role: "Head" },
-          { name: "Akshat", src:"", role: "Head" },
-          { name: "Rishabh",src:"",  role: "Head" },
+         
         ],
       },
       {
