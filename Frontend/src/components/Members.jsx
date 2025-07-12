@@ -82,6 +82,7 @@ function MemberSection() {
           { name: "Pranjul",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752053036/admin-profiles/uhjebezknbaekw11gcqe.jpg",  role: "Head" },
           { name: "Kush",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752059201/admin-profiles/awdty7mn7jca8ak8fcbo.webp",  role: "Design" },
           { name: "Sudhir",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752060101/admin-profiles/zqwx62vglgjgvjdjpxgw.jpg",  role: "Design" },
+          { name: "Mayank",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752300793/admin-profiles/tkl0kteltami7eqrwd83.png",  role: "Design" },
         ],
       },
     ],
