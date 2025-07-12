@@ -4,6 +4,7 @@ const dotenv = require("dotenv")
 const userroute = require("./routes/user.routes")
 const adminroute = require("./routes/admin.routes")
 const libraryroute = require("./routes/library.routes")
+const profileroute= require("./routes/profile.routes")
 const path = require('path')
 
 const cors = require("cors")
@@ -45,6 +46,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use('/users', userroute)
 app.use('/admins', adminroute)
 app.use('/library', libraryroute)
+app.use('/profile', profileroute)
 
 
 app.get('/',(req,res)=>{

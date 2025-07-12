@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/card";
 import { useInView } from "react-intersection-observer";
 import { useMemo } from "react";
@@ -6,8 +7,32 @@ import { FaUser } from "react-icons/fa"; // ✅ IMPORTED ICONS FROM REACT-ICONS
 // import {faUser,} from "react-icons/fa";
 import AutoRobClublogo from "../assets/images/Autoroblogo.png";
 import test from "../assets/images/test.png"
+import axios from "axios";
+
 
 function MemberSection() {
+
+// useEffect(() => {
+//   const fetchdata = async()=>{
+//   const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/profile/`)
+
+//  if(response.status==200){
+//   const data = response.data.profile
+//   console.log(data)
+//  }
+
+
+// }
+
+// fetchdata()
+
+
+ 
+// }, [])
+
+
+
+
   const teamsData = useMemo(
     () => [
       {
