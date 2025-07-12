@@ -24,7 +24,7 @@ function MemberSection() {
       {
         team: "Third Year",
         members: [
-          { name: "Arnav",src:"",  role: "Head" },
+          { name: "Arnav",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752240432/admin-profiles/sczw7uyrmwnpz5wgx0gf.jpg",  role: "Head" },
           { name: "Ayush",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751467611/user-profiles/icpql5nzfm1nzriearvq.jpg",  role: "Head" },
           { name: "Akshat",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044841/user-profiles/uaymjnueek15xur4lozw.jpg",  role: "Head" },
           { name: "Rishabh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751533369/admin-profiles/clhrxfh4hu29pboelxuz.jpg",  role: "Head" },
@@ -38,9 +38,9 @@ function MemberSection() {
         team: "Second Year",
         members: [
           { name: "Abhishek",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751139733/admin-profiles/vcmckprvqvae2j5gdvgb.jpg",  role: "Hardware" },
-          { name: "Nishant",src:"",  role: "Session cood." },
+          { name: "Nishant",src:"",  role: "Session" },
           { name: "Vanshika",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752047649/admin-profiles/bm07eiwdhoakpmhkyjbh.jpg",  role: "Hardware" },
-          { name: "Nishtha",src:"",  role: "Head" },
+          { name: "Ishita",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752165339/admin-profiles/cehma1dxtb7kkaoi5prp.png",  role: "Head" },
           { name: "Bhoomi",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752048738/admin-profiles/kkgnkn2abioqp53b3jrd.jpg",  role: "Head" },
           { name: "Swati",src:"",  role: "Software" },
           { name: "Kartikey",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044023/user-profiles/ywajcf8oy7z25spptp8s.jpg",  role: "Software" },
