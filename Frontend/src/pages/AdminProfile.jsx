@@ -121,7 +121,7 @@ useEffect(() => {
   
 
   return (
-    <div className="min-h-screen bg-[#f5f6fa] flex flex-col md:flex-row">
+    <div className="min-h-screen bg-[#f5f6fa] flex flex-col md:flex-row overflow-hidden">
       {/* Sidebar */}
       <aside className="w-full md:w-64 bg-white p-4 md:p-6 shadow-md">
         <div className='flex items-center justify-between'>
