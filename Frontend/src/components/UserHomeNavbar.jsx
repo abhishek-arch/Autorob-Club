@@ -1,4 +1,4 @@
-import React from 'react'
+import { motion } from 'framer-motion'
 import autoroblogo from '../assets/images/Autoroblogo.png'
 import '../Css/Navbar.css'
 import hamburger from '../assets/images/hamburger.svg'
@@ -36,19 +36,107 @@ const navbar = ({isopen , setisopen}) => {
   return (
     <div>
       <div className='bg-gray-800 border-black flex items-center justify-between'>
-        <img className='logo w-lg ' srcSet={autoroblogo} alt="" />
+
+
+
+        <motion.img 
+        
+ initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 25,
+            delay: 0.3,
+            duration: 1.2,
+          }}
+        
+        
+        className='logo w-lg ' srcSet={autoroblogo} alt="" />
+
+
+
+
         <ul className='flex navbar justify-end gap-4 p-2 items-center text-white cursor-pointer text-lg font-semibold'>
-        <li><Link  className="hover:text-blue-400 inline-block hover:scale-125">Home</Link></li>
+        <motion.li
+         initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 20,
+                  delay: 0.7 ,
+                
+                }}
+        
+        ><Link  className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400  font-medium transition-colors duration-300 group">Home
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
+        </Link></motion.li>
 
 
 
-        <li><Link to='/Autorob-Club/library' className="hover:text-blue-400 inline-block  hover:scale-125">Library</Link></li>
+        <motion.li
+        
+         initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 20,
+                  delay: 0.9 ,
+                
+                }}
+        >
+          
+          <Link to='/Autorob-Club/library' className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400  font-medium transition-colors duration-300 group">Library
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          
+          
+          </motion.li>
 
 
 
-         <li><Link to="/Autorob-Club/user-profile" className="hover:text-blue-400 inline-block hover:scale-125">Dashboard</Link></li>
+         <motion.li
+         
+          initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 20,
+                  delay: 1.1 ,
+                
+                }}
+         >
+          
+          <Link to="/Autorob-Club/user-profile" className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400  font-medium transition-colors duration-300 group">Dashboard
 
-        <li><Link  onClick={handleClicklogout} className="hover:text-blue-400 inline-block hover:scale-125">Logout</Link></li>
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
+          </Link>
+         
+         </motion.li>
+
+        <motion.li
+         initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 30,
+                  delay: 1.3 ,
+                
+                }}
+        
+        >
+          
+          
+          <Link  onClick={handleClicklogout} className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400  font-medium transition-colors duration-300 group">Logout
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
+          
+          </Link>
+          
+          </motion.li>
 
         
           

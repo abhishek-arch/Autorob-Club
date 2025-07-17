@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion} from "framer-motion";
 import autoroblogo from '../assets/images/Autoroblogo.png'
 import '../Css/Navbar.css'
 import hamburger from '../assets/images/hamburger.svg'

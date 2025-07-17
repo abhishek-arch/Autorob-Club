@@ -1,4 +1,4 @@
-
+import {motion} from "framer-motion"
 import Navbar from "../components/UserHomeNavbar";
 import Header from "../components/Header";
 
@@ -61,10 +61,15 @@ export default function AutoRobClub() {
           <div className="home_cross flex">
             <li className="">
               <a
+
+
+ 
+
                 href="#"
-                className="hover:text-blue-400 inline-block  hover:scale-125"
+                className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400  font-bold transition-colors duration-300 group"
               >
                 Home
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
               </a>
             </li>
             <img
@@ -78,9 +83,10 @@ export default function AutoRobClub() {
             <Link
               to="/Autorob-Club/library"
        
-              className="hover:text-blue-400 inline-block  hover:scale-125"
+              className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400  font-bold  transition-colors duration-300 group"
             >
               Library
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
          
           </li>
@@ -88,18 +94,20 @@ export default function AutoRobClub() {
             <Link
               to="/Autorob-Club/user-profile"
               
-              className="hover:text-blue-400 inline-block hover:scale-125"
+              className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400  font-bold transition-colors duration-300 group"
             >
              Dashboard
+             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
           </li>
           <li>
             <Link
               onClick={handleClick}
               
-              className="hover:text-blue-400 inline-block hover:scale-125"
+              className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400  font-bold transition-colors duration-300 group"
             >
               Logout
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
             </Link>
           </li>
         </ul>

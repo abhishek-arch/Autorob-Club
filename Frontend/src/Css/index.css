@@ -32,21 +32,21 @@ body {
   width: 100%;
   /* cursor: none; Hide default cursor */
   position: relative;
-  background-color: black;
-  color: white;
+  /* background-color: black;
+  color: white; */
 }
 
-a,
+/* a,
 button,
 input,
 textarea,
 select {
   cursor: none;
-}
+} */
 
 /* Section styling */
 /* section {
-  position: relative;
+  position: relative; 
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -102,10 +102,11 @@ select {
 
 
 @layer base {
-  * {
+  /* * {
     @apply border-border ;
-  }
+  } */
   body {
     @apply bg-background text-foreground ;
   }
 }
+/* NNnn */
