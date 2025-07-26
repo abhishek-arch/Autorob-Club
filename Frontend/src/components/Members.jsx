@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+
 import { Card, CardContent } from "@/components/card";
 import { useInView } from "react-intersection-observer";
 import { useMemo } from "react";
@@ -40,7 +39,7 @@ function MemberSection() {
         members: [
           { name: "Pragya", src:"", role: "former President" },
         
-          { name: "Namo",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752117791/admin-profiles/zumc2itdjyxbldybh7fg.jpg",  role: "former VicePresident" },
+          { name: "Namo",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752117791/admin-profiles/zumc2itdjyxbldybh7fg.jpg",  role: "VicePresident" },
           { name: "Uday",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752086451/admin-profiles/sluaovm6dzku1wefe7fq.jpg",  role: " former Member" },
         
         ],
@@ -131,7 +130,7 @@ function MemberSection() {
                     >
                        <img
                        
-                          className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover"
+                          className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover "
                           srcSet={member.src}
                           alt=""
                         />
