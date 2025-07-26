@@ -36,48 +36,53 @@ function MemberSection() {
   const teamsData = useMemo(
     () => [
       {
+        team: "Pass Out",
+        members: [
+          { name: "Pragya", src:"", role: "former President" },
+        
+          { name: "Namo",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752117791/admin-profiles/zumc2itdjyxbldybh7fg.jpg",  role: "former VicePresident" },
+          { name: "Uday",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752086451/admin-profiles/sluaovm6dzku1wefe7fq.jpg",  role: " former Member" },
+        
+        ],
+      },
+      {
         team: "Final Year",
         members: [
-          { name: "Pragya", src:"", role: "President" },
-        
-          { name: "Namo",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752117791/admin-profiles/zumc2itdjyxbldybh7fg.jpg",  role: "Vice President" },
-          { name: "Uday",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752086451/admin-profiles/sluaovm6dzku1wefe7fq.jpg",  role: "Vice President" },
-          { name: "Namo",src:"",  role: "Vice President" },
-          { name: "Namo",src:"",  role: "Vice President" },
+          { name: "Deepak",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1753541636/admin-profiles/ahclpwgcz1qvoovwrt6m.jpg",  role: "President" },
+          { name: "Shaivi",src:"",  role: "Vice President" },
+          { name: "Ayush",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751467611/user-profiles/icpql5nzfm1nzriearvq.jpg",  role: "Vice President" },
+          { name: "Akshat",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044841/user-profiles/uaymjnueek15xur4lozw.jpg",  role: "Vice President" },
+          { name: "Arnav",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752240432/admin-profiles/sczw7uyrmwnpz5wgx0gf.jpg",  role: "Secretary" },
+          { name: "Rishabh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751533369/admin-profiles/clhrxfh4hu29pboelxuz.jpg",  role: "Secretary" },
+          { name: "Ashutosh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752135737/admin-profiles/eohrilmmn85xeyukb4nw.jpg",  role: "Secretary" },
+          { name: "Deepika",src:"",  role: "Secretary" },
+          { name: "Abhishek",src:"",  role: "Secretary" },
+          { name: "Hanshika",src:"",  role: "Secretary" },
+          
+         
+          
+         
         ],
       },
       {
         team: "Third Year",
         members: [
-          { name: "Arnav",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752240432/admin-profiles/sczw7uyrmwnpz5wgx0gf.jpg",  role: "Head" },
-          { name: "Ayush",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751467611/user-profiles/icpql5nzfm1nzriearvq.jpg",  role: "Head" },
-          { name: "Akshat",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044841/user-profiles/uaymjnueek15xur4lozw.jpg",  role: "Head" },
-          { name: "Rishabh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751533369/admin-profiles/clhrxfh4hu29pboelxuz.jpg",  role: "Head" },
-          { name: "Ashutosh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752135737/admin-profiles/eohrilmmn85xeyukb4nw.jpg",  role: "Head" },
-          { name: "Shaivi",src:"",  role: "Head" },
-          { name: "Deepak",src:"",  role: "Head" },
-         
-        ],
-      },
-      {
-        team: "Second Year",
-        members: [
-          { name: "Abhishek",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751139733/admin-profiles/vcmckprvqvae2j5gdvgb.jpg",  role: "Hardware" },
-          { name: "Nishant",src:"",  role: "Session" },
+          { name: "Abhishek",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751139733/admin-profiles/vcmckprvqvae2j5gdvgb.jpg",  role: "Software" },
+          
           { name: "Vanshika",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752047649/admin-profiles/bm07eiwdhoakpmhkyjbh.jpg",  role: "Hardware" },
           { name: "Ishita",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752165339/admin-profiles/cehma1dxtb7kkaoi5prp.png",  role: "Head" },
           { name: "Bhoomi",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752048738/admin-profiles/kkgnkn2abioqp53b3jrd.jpg",  role: "Head" },
           { name: "Swati",src:"",  role: "Software" },
-          { name: "Kartikey",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044023/user-profiles/ywajcf8oy7z25spptp8s.jpg",  role: "Software" },
+          { name: "Kartikey",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752044023/user-profiles/ywajcf8oy7z25spptp8s.jpg",  role: "Hardware" },
           { name: "Priyanshu",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751737630/admin-profiles/wfuqzxkqibsvtgnvyvkg.jpg",  role: "Head" },
           { name: "Shubh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752046450/admin-profiles/a0tly955w2xxedp1f5h5.jpg",  role: "Head" },
           { name: "Asheesh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751768085/admin-profiles/ejiitqqvqpvgp6wusdfx.jpg",  role: "Head" },
           { name: "Harsh",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751736781/admin-profiles/ozwsdf5c51gckdhudo61.webp",  role: "Head" },
-          { name: "Yuvraj",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751784776/admin-profiles/nhdcncuivdtj7zif9gfv.jpg",  role: "Head" },
+          { name: "Yuvraj",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751784776/admin-profiles/nhdcncuivdtj7zif9gfv.jpg",  role: "Hardware" },
           { name: "Aditya",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752045362/admin-profiles/eoc93hiospu773n2i0uw.jpg",  role: "Event&PR" },
           { name: "Mayank",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752051444/admin-profiles/wcesfuzebnvdaoficppq.jpg",  role: "Software" },
-          { name: "Aryan",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751739334/admin-profiles/avpajgvsgoq9qybaj0k5.jpg",  role: "Head" },
-          { name: "Vipranshu",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752053286/admin-profiles/ugpkc2t4o7equynlsgy0.jpg",  role: "Head" },
+          { name: "Aryan",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1751739334/admin-profiles/avpajgvsgoq9qybaj0k5.jpg",  role: "Session" },
+          { name: "Vipranshu",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752053286/admin-profiles/ugpkc2t4o7equynlsgy0.jpg",  role: "Treasurer" },
           { name: "Shivam",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752043668/admin-profiles/rjpihvh9kjqeljmsoyp8.jpg",  role: "Head" },
           { name: "Pranjul",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752053036/admin-profiles/uhjebezknbaekw11gcqe.jpg",  role: "Head" },
           { name: "Kush",src:"https://res.cloudinary.com/dxxnjkezo/image/upload/v1752059201/admin-profiles/awdty7mn7jca8ak8fcbo.webp",  role: "Design" },

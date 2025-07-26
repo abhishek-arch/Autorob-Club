@@ -5,14 +5,14 @@ import AutoRoblogo from "../assets/images/Autoroblogo.png";
 const SignupOptions = () => {
   return (
     <div className=''>
-      <div className='flex items-center justify-self-center'>
+      <div className='flex items-center flex-nowrap sm:gap-x-[39%]'>
           <img
-                      className="w-52 mb-2 invert"
+                      className="sm:w-52 w-36 mb-2 invert"
                       src={AutoRoblogo}
                       alt=""
                       srcset=""
                     />
-                    <h1 className='text-3xl font-bold'>AUTOROB CLUB</h1>
+                    <h1 className='text- whitespace-nowrap   font-bold'>AUTOROB CLUB</h1>
       </div>
 
        <Link
