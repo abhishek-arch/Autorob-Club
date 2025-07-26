@@ -144,7 +144,7 @@ function MemberSection() {
                         <h3 className="text-2xl text-center font-semibold text-blue-300  ">
                           {member.name}
                         </h3>
-                        <p className="text-gray-400">{member.role}</p>
+                        <p className="text-gray-400 mb-2 whitespace-nowrap">{member.role}</p>
                       </CardContent>
                   </div>
                 ))}
