@@ -1,5 +1,5 @@
 
-import React,{useContext,useEffect, useState} from 'react';
+import {useContext,useEffect, useState} from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { AdminContextData } from '../Context/AdminContext';
