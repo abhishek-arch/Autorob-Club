@@ -111,7 +111,7 @@ const Adminlogin = () => {
               placeholder="email@example.com"
             />
 
-            <h3 className="ext-lg font-medium mb-2"> Enter password</h3>
+            <h3 className="text-lg font-medium mb-2"> Enter password</h3>
 
             <input
               required
